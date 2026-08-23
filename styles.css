@@ -464,9 +464,53 @@ body[data-page="news"] .subpage-main {
   letter-spacing: -0.07em;
 }
 
-.hero-copy > p {
+.hero-identity {
+  display: grid;
+  grid-template-columns: auto 30px minmax(0, 1fr);
+  align-items: center;
+  gap: 13px;
+  max-width: 650px;
+  margin-top: clamp(27px, 2.5vw, 39px);
+  color: var(--navy);
+  font-size: clamp(15px, 1.08vw, 18px);
+  line-height: 1.45;
+}
+
+.hero-identity strong {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+}
+
+.hero-identity > span[aria-hidden="true"] {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--red) 0 5px, var(--blue) 5px 100%);
+}
+
+.hero-identity > span:last-child {
+  font-weight: 600;
+  letter-spacing: -0.018em;
+}
+
+.hero-identity-acronym {
+  display: inline-block;
+  color: var(--blue);
+  font-size: 1.22em;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  vertical-align: -0.015em;
+}
+
+.hero-identity-unit {
+  display: inline-block;
+}
+
+.hero-summary {
   max-width: 610px;
-  margin-top: clamp(28px, 3vw, 48px);
+  margin-top: 13px;
   color: #414a65;
   font-size: clamp(17px, 1.28vw, 22px);
   line-height: 1.55;
@@ -1663,7 +1707,7 @@ body[data-page="research"] .subpage-main {
 
 .people-level-members-phd {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(28px, 3.5vw, 58px);
+  gap: clamp(34px, 4vw, 64px);
 }
 
 .people-level-members-phd::before {
@@ -2152,6 +2196,11 @@ body[data-page="research"] .subpage-main {
   letter-spacing: -0.04em;
 }
 
+.person-cohort {
+  display: block;
+  margin-top: 2px;
+}
+
 .person-featured .person-copy h3 {
   font-size: clamp(44px, 4.25vw, 64px);
   line-height: 1;
@@ -2162,10 +2211,10 @@ body[data-page="research"] .subpage-main {
   margin-top: 7px;
   color: var(--muted);
   font-family: "DM Mono", monospace;
-  font-size: 8px;
-  line-height: 1.5;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
+  font-size: clamp(10px, 0.76vw, 12px);
+  line-height: 1.55;
+  letter-spacing: 0.025em;
+  text-transform: none;
 }
 
 .person-featured .person-copy p {
@@ -3038,6 +3087,19 @@ body[data-page="research"] .subpage-main {
   line-height: 1.65;
 }
 
+.footer-brand .footer-lab-name {
+  margin-top: 26px;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.018em;
+}
+
+.footer-brand .footer-affiliation {
+  margin-top: 9px;
+}
+
 .footer-directory {
   grid-area: directory;
   display: grid;
@@ -3551,7 +3613,7 @@ body[data-page="research"] .subpage-main {
 
   .people-level-members-phd {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 48px;
+    gap: 56px 42px;
   }
 
   .people-level-members-phd::before {
@@ -3678,8 +3740,15 @@ body[data-page="research"] .subpage-main {
     letter-spacing: -0.068em;
   }
 
-  .hero-copy > p {
+  .hero-identity {
+    grid-template-columns: auto 22px minmax(0, 1fr);
+    gap: 10px;
     margin-top: 25px;
+    font-size: 15px;
+  }
+
+  .hero-summary {
+    margin-top: 12px;
     font-size: 16px;
   }
 
@@ -3948,6 +4017,10 @@ body[data-page="research"] .subpage-main {
     grid-column: 1;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 34px 22px;
+  }
+
+  .people-level-members-phd {
+    gap: 46px 30px;
   }
 
   .person {
