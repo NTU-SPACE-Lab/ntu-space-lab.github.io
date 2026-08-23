@@ -16,9 +16,15 @@ dependencies.
 - `space-mark-v8.svg` — standalone primary mark
 - `space-mark-v8-reversed.svg` — standalone mark for dark backgrounds
 - `space-mark-v8-mono.svg` — standalone single-ink mark
-- `favicon-v8.svg` — small-size-tuned vector favicon
-- `favicon-v8-32.png` — 32 px browser fallback
-- `apple-touch-icon-v8.png` — 180 px touch icon
+- `favicon-v10-32.png` — current 32 px transparent favicon, extracted from the approved logo
+- `favicon-v10-64.png` — current 64 px transparent high-density favicon
+- `apple-touch-icon-v10.png` — current 180 px transparent touch icon
+- `favicon-v9.svg` — previous vector favicon retained for reference
+- `favicon-v9-32.png` — previous transparent 32 px browser fallback
+- `apple-touch-icon-v9.png` — previous transparent 180 px touch icon
+- `favicon-v8.svg` — previous vector favicon retained for reference
+- `favicon-v8-32-transparent.png` — previous transparent 32 px browser fallback
+- `apple-touch-icon-v8.png` — previous 180 px touch icon with a white background
 - `space-logo-v8-approved-reference.png` — uncropped approved source image
 
 ## Colours
