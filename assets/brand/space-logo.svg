@@ -1,0 +1,30 @@
+<svg width="606" height="104" viewBox="-4 -4 606 104" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="space-logo-title space-logo-desc">
+  <title id="space-logo-title">SPACE LAB</title>
+  <desc id="space-logo-desc">A geometric SPACE LAB wordmark with a spatial coordinate A, a refined P, and a prominent LAB signature.</desc>
+
+  <!-- SPACE: broad geometric forms with consistent optical weight. -->
+  <g stroke="#080C27" stroke-width="14" stroke-linecap="butt" stroke-linejoin="miter">
+    <path d="M72 17C65 10.5 56 8 43 8C22 8 10 18 10 32C10 45 20 51 39 51H46C63 51 73 57 73 69C73 82 61 89 40 89C24 89 12 85 4 78"/>
+    <path d="M327 18C320 11 310 8 297 8C274 8 260 22 260 48.5C260 75 274 89 297 89C310 89 320 85.5 327 78"/>
+  </g>
+
+  <!-- Refined P: a lifted bowl, generous counter, and uninterrupted full-height stem. -->
+  <path fill="#080C27" fill-rule="evenodd" d="M92 8H132.5C158.5 8 174 19 174 37.5C174 56 158.5 67 132.5 67H111V89H92V8ZM111 25V50H132C147 50 155 46 155 37.5C155 29 147 25 132 25H111Z"/>
+
+  <!-- The A doubles as a three-axis spatial origin. -->
+  <path d="M190 89L222 8L254 89" stroke="#080C27" stroke-width="14" stroke-linecap="butt" stroke-linejoin="miter"/>
+  <path d="M222 14V58" stroke="#1769FF" stroke-width="5.5" stroke-linecap="square"/>
+  <path d="M218 65L198 84" stroke="#1769FF" stroke-width="5.5" stroke-linecap="square"/>
+  <path d="M226 65L246 84" stroke="#080C27" stroke-width="5.5" stroke-linecap="square"/>
+  <path d="M222 4L214.5 18H229.5L222 4Z" fill="#1769FF"/>
+  <path d="M192.5 89L198 73.5L208 84.5L192.5 89Z" fill="#1769FF"/>
+  <circle cx="222" cy="61.5" r="7" fill="#D71440" stroke="white" stroke-width="2.5"/>
+
+  <path fill="#080C27" d="M347 8H411V25H366V39.5H406V56H366V72H411V89H347V8Z"/>
+
+  <!-- LAB is 68% of the SPACE cap height: prominent, balanced, and fully legible. -->
+  <rect x="429" y="15" width="4" height="67" fill="#1769FF"/>
+  <path fill="#080C27" d="M449 22H461V66H486V77H449V22Z"/>
+  <path fill="#080C27" fill-rule="evenodd" d="M491 77L510.5 22H524.5L544 77H531.5L527 64H508L503.5 77H491ZM511.5 53.5H523.5L517.5 35.5L511.5 53.5Z"/>
+  <path fill="#080C27" fill-rule="evenodd" d="M552 22H572C584 22 591 27.5 591 36.5C591 42 588 46 583 48C589 50 593 54.5 593 61.5C593 71.5 585 77 572 77H552V22ZM564 32V43.5H571C576.5 43.5 579.5 41.5 579.5 37.5C579.5 33.7 576.5 32 571 32H564ZM564 53V67H572C578 67 581.5 64.8 581.5 60C581.5 55.3 578 53 572 53H564Z"/>
+</svg>

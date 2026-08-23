@@ -1,0 +1,30 @@
+<svg width="802" height="128" viewBox="-2 -2 1604 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="space-logo-v8-title space-logo-v8-desc">
+  <title id="space-logo-v8-title">SPACE Lab</title>
+  <desc id="space-logo-v8-desc">SPACE Lab identity with a folded spatial S, red origin node, geometric wordmark, and coordinate divider.</desc>
+
+  <g id="space-v8-mark">
+    <path fill="#1769FF" d="M8 82C0 75-1 63 7 54C10 50 14 47 19 44L88 5C97 0 109-1 119 4L197 45C202 48 205 52 205 57C205 63 201 66 194 65L137 61C123 60 109 63 97 70L61 91C43 101 23 96 8 82Z"/>
+    <path fill="#1769FF" d="M7 193C2 193 0 197 1 201C2 205 5 208 9 210L86 249C97 254 108 253 119 247L197 202C205 197 208 190 204 182L190 169L157 162L105 192C94 198 85 202 72 201L7 193Z"/>
+    <path fill="#080C27" d="M1 69C1 82 6 96 17 108C29 121 44 133 60 138C74 143 87 138 101 130V121L60 94C45 84 33 76 22 68L7 56C3 60 1 64 1 69Z"/>
+    <path fill="#080C27" d="M108 124C124 115 138 112 153 114C173 116 191 129 201 144C209 157 208 171 203 183L190 174L157 162L113 147C107 145 105 137 108 124Z"/>
+    <path class="fold-seam" d="M5 68C25 83 45 96 65 108L96 127" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+    <path class="fold-seam" d="M111 143C139 151 171 162 202 183" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="103" cy="130" r="14" fill="#D71440" stroke="#FFFFFF" stroke-width="4"/>
+  </g>
+
+  <g fill="#080C27" transform="translate(288 59)">
+    <path class="wordmark-s" d="M148.5 11.6H39.3C25.2 11.6 13.8 23 13.8 37.1C13.8 51.2 25.2 62.7 39.3 62.7H115.5C131.9 62.7 145.2 76 145.2 92.6C145.2 109.1 131.9 122.4 115.5 122.4H4.1" fill="none" stroke="#080C27" stroke-width="23.2" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path fill-rule="evenodd" d="M202 0H313C340 0 359 16 359 39C359 62 340 78 313 78H226V134H202V0ZM226 22V56H311C326 56 335 50 335 39C335 28 326 22 311 22H226Z"/>
+    <path d="M384 134L466 0H476L568 134H538L476 31L414 134H384Z"/>
+    <path class="wordmark-a-crossbar" d="M438 91H510L523 112H425L438 91Z"/>
+    <path d="M760 0H671C630 0 601 28 601 67C601 106 630 134 671 134H760V110H673C646 110 627 93 627 67C627 41 646 24 673 24H760V0Z"/>
+    <path d="M950 0H827C806 0 792 14 792 34V100C792 120 806 134 827 134H950V110H827C820 110 816 106 816 100V80H924V56H816V34C816 28 820 24 827 24H950V0Z"/>
+  </g>
+
+  <rect x="1278.5" y="47" width="8" height="162" fill="#1769FF"/>
+  <g fill="#080C27" transform="translate(1323 88)">
+    <path d="M0 0H14V75H66V89H0V0Z"/>
+    <path fill-rule="evenodd" d="M114 25C96 25 83 39 83 57C83 75 96 89 114 89C126 89 136 84 142 76V89H157V26H142V38C136 30 126 25 114 25ZM115 39C130 39 142 47 142 57C142 68 130 76 115 76C104 76 97 68 97 57C97 47 104 39 115 39Z"/>
+    <path fill-rule="evenodd" d="M181 0H196V36C202 29 212 25 224 25C243 25 257 39 257 57C257 75 243 89 224 89C212 89 202 85 196 78V89H181V0ZM223 39C211 39 201 46 196 56V59C201 69 211 76 223 76C235 76 243 68 243 57C243 47 235 39 223 39Z"/>
+  </g>
+</svg>

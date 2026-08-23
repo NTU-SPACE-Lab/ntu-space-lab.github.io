@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SPACE Lab at NTU EEE advances embodied intelligence, world models, and spatial and physical intelligence."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content="SPACE Lab — NTU EEE" />
+    <meta
+      property="og:description"
+      content="Intelligence that moves through the world."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/hero-world.png" />
+    <title>SPACE Lab — NTU EEE</title>
+    <link rel="icon" href="assets/brand/v8/favicon-v8.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/brand/v8/favicon-v8-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/brand/v8/apple-touch-icon-v8.png" />
+    <script>
+      (() => {
+        const introKey = "space-lab:intro:v1";
+        const root = document.documentElement;
+        let shouldPlay = false;
+
+        try {
+          shouldPlay =
+            !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+            !window.sessionStorage.getItem(introKey);
+          if (shouldPlay) window.sessionStorage.setItem(introKey, "seen");
+        } catch {
+          shouldPlay = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        }
+
+        if (shouldPlay) root.classList.add("space-intro-pending");
+        window.setTimeout(() => root.classList.remove("space-intro-pending"), 4200);
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="home">
+    <div class="space-intro" data-space-intro>
+      <div class="space-intro-grid"></div>
+      <svg class="space-intro-orbits" viewBox="0 0 1200 720" aria-hidden="true">
+        <ellipse class="space-intro-orbit space-intro-orbit-a" cx="600" cy="360" rx="420" ry="128" />
+        <ellipse class="space-intro-orbit space-intro-orbit-b" cx="600" cy="360" rx="330" ry="245" />
+        <path class="space-intro-axis" d="M126 360H1074M600 78V642" />
+      </svg>
+      <div class="space-intro-scan"></div>
+      <div class="space-intro-core">
+        <div class="space-intro-logo-stage">
+          <img
+            src="assets/brand/v8/space-logo-v8-reversed.svg"
+            alt="SPACE Lab"
+            width="802"
+            height="128"
+          />
+          <span class="space-intro-origin"></span>
+        </div>
+        <span class="space-intro-caption">Perception · Prediction · Action</span>
+      </div>
+      <button class="space-intro-hint" type="button">Click anywhere to enter</button>
+    </div>
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+    <header class="site-header" data-header>
+      <a class="space-brand" href="index.html" aria-label="SPACE Lab home">
+        <img
+          src="assets/brand/v8/space-logo-v8-approved.png"
+          alt="SPACE Lab"
+          width="1929"
+          height="344"
+        />
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="index.html" data-page-link="home">Home</a>
+        <a href="research.html" data-page-link="research">Research</a>
+        <a href="publications.html" data-page-link="publications">Publications</a>
+        <a href="people.html" data-page-link="people">People</a>
+        <a href="news.html" data-page-link="news">News</a>
+        <a href="join.html" data-page-link="join">Join Us</a>
+      </nav>
+
+      <a
+        class="ntu-brand"
+        href="https://www.ntu.edu.sg/eee"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="NTU School of Electrical and Electronic Engineering"
+      >
+        <img
+          src="assets/brand/ntu-logo.png"
+          alt="Nanyang Technological University Singapore"
+        />
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        data-menu-toggle
+      >
+        <span></span><span></span>
+      </button>
+
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+        <nav aria-label="Mobile navigation">
+          <a href="index.html" data-page-link="home">Home <span>00</span></a>
+          <a href="research.html" data-page-link="research">Research <span>01</span></a>
+          <a href="publications.html" data-page-link="publications">Publications <span>02</span></a>
+          <a href="people.html" data-page-link="people">People <span>03</span></a>
+          <a href="news.html" data-page-link="news">News <span>04</span></a>
+          <a href="join.html" data-page-link="join">Join Us <span>05</span></a>
+        </nav>
+        <p>School of Electrical and Electronic Engineering<br />NTU Singapore</p>
+        <a
+          class="mobile-ntu"
+          href="https://www.ntu.edu.sg/eee"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src="assets/brand/ntu-logo.png"
+            alt="Nanyang Technological University Singapore"
+          />
+        </a>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy" data-reveal>
+          <h1 id="hero-title">Intelligence that moves through the world.</h1>
+          <p>
+            SPACE Lab at NTU EEE advances embodied intelligence, world models,
+            and spatial &amp; physical intelligence.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="research.html">
+              Explore our research
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M4 10h11M11 5l5 5-5 5" />
+              </svg>
+            </a>
+            <a class="button button-secondary" href="people.html">
+              Meet the team
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M4 10h11M11 5l5 5-5 5" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <figure class="hero-visual" data-hero-visual data-reveal>
+          <img
+            src="assets/images/hero-world.png"
+            alt="A luminous spatial model containing robots, a human point cloud, and physical trajectories"
+            width="1456"
+            height="1088"
+            fetchpriority="high"
+          />
+          <figcaption>Perception · Prediction · Action</figcaption>
+        </figure>
+
+        <a class="scroll-cue" href="#about" aria-label="Scroll to discover">
+          <span>Scroll to discover</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4v15M7 14l5 5 5-5" />
+          </svg>
+        </a>
+      </section>
+
+      <section class="home-about section-shell" id="about" aria-labelledby="about-title">
+        <div class="home-about-backdrop" aria-hidden="true">
+          <img
+            src="assets/images/campus/ntu-the-hive.jpg"
+            alt=""
+            width="1280"
+            height="914"
+            loading="lazy"
+            decoding="async"
+          />
+          <span>The Hive · NTU Singapore</span>
+        </div>
+
+        <div class="home-section-label" aria-hidden="true">
+          <span>About</span><i></i><b></b>
+        </div>
+
+        <div class="home-about-grid">
+          <div class="home-about-copy" data-reveal>
+            <h2 id="about-title"><strong>SPACE</strong> Lab@NTU</h2>
+            <p class="home-about-statement">
+              SPACE is where intelligence becomes grounded.
+            </p>
+            <div class="home-about-body">
+              <p>
+                SPACE Lab is a research group in the School of Electrical and Electronic
+                Engineering at Nanyang Technological University, Singapore. We advance
+                embodied intelligence, world models, and spatial and physical intelligence,
+                with the goal of building systems that can understand and interact with the
+                world—not simply recognize what is in it.
+              </p>
+              <p>
+                Our <a href="research.html">research</a> connects perception, simulation,
+                reasoning, and control. We develop agents that perceive and act in open
+                environments, predictive representations that capture how dynamic scenes
+                evolve, and geometry- and physics-informed methods that ground intelligent
+                behavior in the structure and consequences of the physical world.
+              </p>
+              <p>
+                By bringing foundational models and integrated systems into a continuous
+                loop between sensing and action, we aim to create intelligence that can
+                perceive, predict, and participate in real environments. We are building an
+                open, collaborative community and <a href="join.html">welcome students and
+                collaborators</a> who want to help push the frontier of grounded intelligence.
+              </p>
+            </div>
+            <div class="home-about-meta">
+              <p class="location-line">NTU · EEE · Singapore</p>
+              <a class="editorial-link" href="research.html">
+                Explore our research
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M3 10h13M11 5l5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="coordinate-field" aria-hidden="true" data-reveal>
+            <span class="coordinate-axis axis-horizontal"></span>
+            <span class="coordinate-axis axis-vertical"></span>
+            <span class="coordinate-sphere"></span>
+            <span class="coordinate-orbit orbit-one"></span>
+            <span class="coordinate-orbit orbit-two"></span>
+            <span class="coordinate-orbit orbit-three"></span>
+            <span class="coordinate-node node-blue-one"></span>
+            <span class="coordinate-node node-blue-two"></span>
+            <span class="coordinate-node node-red"></span>
+            <span class="axis-label axis-label-x">x</span>
+            <span class="axis-label axis-label-y">y</span>
+            <span class="axis-label axis-label-z">z</span>
+          </div>
+        </div>
+
+      </section>
+
+      <section
+        class="home-highlights section-shell"
+        id="highlights"
+        aria-labelledby="highlights-title"
+      >
+        <header class="home-highlights-heading" data-reveal>
+          <div>
+            <p>SPACE Lab@NTU</p>
+            <h2 id="highlights-title">NEWS</h2>
+          </div>
+          <a class="editorial-link highlights-link" href="news.html">
+            View all news
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M3 10h13M11 5l5 5-5 5" />
+            </svg>
+          </a>
+        </header>
+
+        <a class="home-highlight" href="news.html" data-reveal>
+          <p class="home-highlight-meta">
+            <span>01</span>
+            <span>Lab update</span>
+          </p>
+          <div class="home-highlight-copy">
+            <h3>SPACE Lab is taking shape at NTU EEE.</h3>
+          </div>
+          <p class="home-highlight-note">
+            Publications, open-source releases, and lab updates will be shared here.
+          </p>
+          <span class="home-highlight-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 12h13M13 7l5 5-5 5" />
+            </svg>
+          </span>
+        </a>
+      </section>
+
+    </main>
+
+    <footer class="site-footer section-shell">
+      <div class="footer-brand">
+        <a href="index.html" aria-label="SPACE Lab home">
+          <img
+            src="assets/brand/v8/space-logo-v8-approved.png"
+            alt="SPACE Lab"
+            width="1929"
+            height="344"
+          />
+        </a>
+        <p>
+          School of Electrical and Electronic Engineering<br />
+          Nanyang Technological University, Singapore
+        </p>
+      </div>
+      <nav class="footer-directory" aria-label="Footer navigation">
+        <div class="footer-nav-group">
+          <p class="footer-nav-heading">Explore</p>
+          <div class="footer-nav-links">
+            <a href="index.html" data-page-link="home">Home</a>
+            <a href="research.html" data-page-link="research">Research</a>
+            <a href="publications.html" data-page-link="publications">Publications</a>
+          </div>
+        </div>
+        <div class="footer-nav-group">
+          <p class="footer-nav-heading">Lab</p>
+          <div class="footer-nav-links">
+            <a href="people.html" data-page-link="people">People</a>
+            <a href="news.html" data-page-link="news">News</a>
+          </div>
+        </div>
+        <div class="footer-nav-group">
+          <p class="footer-nav-heading">Connect</p>
+          <div class="footer-nav-links">
+            <a href="join.html" data-page-link="join">Join Us</a>
+          </div>
+        </div>
+      </nav>
+      <a
+        class="footer-ntu"
+        href="https://www.ntu.edu.sg/eee"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img
+          src="assets/brand/ntu-logo.png"
+          alt="Nanyang Technological University Singapore"
+        />
+      </a>
+      <p class="copyright">© <span data-year></span> SPACE Lab. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

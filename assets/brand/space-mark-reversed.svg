@@ -1,0 +1,8 @@
+<svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="space-mark-reversed-title">
+  <title id="space-mark-reversed-title">SPACE Lab reversed spatial origin mark</title>
+  <path d="M8 64L36 8L64 64" stroke="#FFFFFF" stroke-width="9" stroke-linecap="butt" stroke-linejoin="miter"/>
+  <path d="M36 12V39" stroke="#4C91FF" stroke-width="5" stroke-linecap="square"/>
+  <path d="M32.5 46L18.5 60" stroke="#4C91FF" stroke-width="5" stroke-linecap="square"/>
+  <path d="M39.5 46L53.5 60" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"/>
+  <circle cx="36" cy="42.5" r="6.25" fill="#F32250" stroke="#080C27" stroke-width="2.5"/>
+</svg>
