@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>SPACE / 标志探索</title>
+    <style>
+      :root {
+        --ink: #141820;
+        --muted: #717781;
+        --line: #e7e9ee;
+        --navy: #071c39;
+        --blue: #2458f5;
+        --black: #141820;
+        font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        color: var(--ink);
+        background: #fff;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      * { box-sizing: border-box; }
+      body { margin: 0; }
+      button, a { -webkit-tap-highlight-color: transparent; }
+      button { font: inherit; }
+      a { color: inherit; text-underline-offset: 4px; }
+      a:hover { color: var(--blue); }
+      a:focus-visible, button:focus-visible {
+        outline: 2px solid var(--blue);
+        outline-offset: 5px;
+      }
+
+      .page {
+        width: min(100%, 1360px);
+        margin: 0 auto;
+        padding: 64px 56px 36px;
+      }
+
+      .intro {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 24px;
+        padding-bottom: 50px;
+      }
+
+      h1, h2, p { margin: 0; }
+      h1 {
+        font-size: clamp(25px, 3.5vw, 42px);
+        font-weight: 500;
+        line-height: 1.25;
+        letter-spacing: -0.035em;
+      }
+      h1 .slash { padding: 0 0.14em; color: #a1a6af; font-weight: 300; }
+      .intro p { font-size: 16px; line-height: 1.6; color: var(--muted); }
+
+      .options {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 32px;
+        row-gap: 48px;
+      }
+
+      .option { min-width: 0; border-top: 1px solid var(--line); }
+      .art {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: #fff;
+        cursor: zoom-in;
+      }
+      .art img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 180ms ease;
+      }
+      @media (hover: hover) {
+        .art:hover img { transform: scale(1.025); }
+      }
+
+      .option-copy { padding: 4px 0 0; }
+      .option-title { display: flex; align-items: baseline; gap: 12px; }
+      .number {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 12px;
+        line-height: 1;
+        color: var(--muted);
+        letter-spacing: 0.015em;
+      }
+      h2 { font-size: 21px; line-height: 1.4; font-weight: 500; letter-spacing: -0.02em; }
+      .concept { margin-top: 10px; font-size: 14px; line-height: 1.7; color: #565d69; }
+      .option-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 17px;
+        font-size: 12px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+      .palette { display: flex; align-items: center; gap: 8px; }
+      .swatches { display: inline-flex; gap: 4px; }
+      .swatch { width: 9px; height: 9px; border-radius: 50%; background: var(--swatch); }
+      .download { white-space: nowrap; }
+
+      .references {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 12px 28px;
+        margin-top: 60px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+        font-size: 12px;
+        line-height: 1.8;
+        color: var(--muted);
+      }
+      .references nav { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+
+      .viewer {
+        width: min(900px, calc(100vw - 48px));
+        max-height: calc(100svh - 48px);
+        padding: 24px 28px;
+        border: 1px solid var(--line);
+        border-radius: 0;
+        background: #fff;
+        color: var(--ink);
+        overflow: auto;
+      }
+      .viewer::backdrop { background: rgb(20 24 32 / 28%); }
+      .viewer-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+      .viewer-heading { display: flex; align-items: baseline; gap: 12px; }
+      .viewer-heading h2 { font-size: 18px; }
+      .close {
+        flex-shrink: 0;
+        border: 0;
+        padding: 8px 0 8px 12px;
+        background: transparent;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.4;
+        cursor: pointer;
+      }
+      .close:hover { color: var(--ink); }
+      .viewer-image {
+        display: block;
+        width: 100%;
+        height: min(68svh, 690px);
+        object-fit: contain;
+        margin: 4px auto;
+        background: #fff;
+      }
+      .viewer-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+        font-size: 13px;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+      body:has(.viewer[open]) { overflow: hidden; }
+
+      @media (max-width: 960px) {
+        .page { padding: 42px 32px 28px; }
+        .intro { padding-bottom: 36px; }
+        .options { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 28px; }
+      }
+      @media (max-width: 560px) {
+        .page { padding: 32px 22px 28px; }
+        .intro { display: block; padding-bottom: 30px; }
+        .intro p { margin-top: 12px; font-size: 14px; }
+        .options { grid-template-columns: minmax(0, 1fr); row-gap: 36px; }
+        .art { max-width: 390px; margin-inline: auto; }
+        .option-copy { padding-top: 0; }
+        .references { margin-top: 42px; padding-top: 20px; }
+        .viewer { width: calc(100vw - 24px); max-height: calc(100svh - 24px); padding: 16px; }
+        .viewer-image { height: min(64svh, 520px); }
+        .viewer-footer { align-items: flex-start; }
+        .viewer-heading h2 { font-size: 16px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .art img { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="intro">
+        <h1>SPACE <span class="slash">/</span> 标志探索</h1>
+        <p>六个方向。一至两色。</p>
+      </header>
+
+      <section class="options" aria-label="六个标志方案">
+        <article class="option">
+          <button class="art" type="button" aria-label="放大查看方案 01：引力 S" data-number="01">
+            <img src="01-gravity-s.png" alt="引力 S：圆形内的 S 形负空间" width="1024" height="1024" />
+          </button>
+          <div class="option-copy">
+            <div class="option-title"><span class="number">01</span><h2>引力 S</h2></div>
+            <p class="concept">圆形内的 S 形负空间。</p>
+            <div class="option-meta">
+              <span class="palette"><span class="swatches" aria-hidden="true"><i class="swatch" style="--swatch: var(--navy)"></i></span>深蓝单色</span>
+              <a class="download" href="01-gravity-s.png" download>下载原图</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="option">
+          <button class="art" type="button" aria-label="放大查看方案 02：开放轨道" data-number="02">
+            <img src="02-open-orbit.png" alt="开放轨道：开放椭圆与一个卫星圆点" width="1024" height="1024" />
+          </button>
+          <div class="option-copy">
+            <div class="option-title"><span class="number">02</span><h2>开放轨道</h2></div>
+            <p class="concept">开放椭圆与一个卫星圆点。</p>
+            <div class="option-meta">
+              <span class="palette"><span class="swatches" aria-hidden="true"><i class="swatch" style="--swatch: var(--black)"></i></span>近黑单色</span>
+              <a class="download" href="02-open-orbit.png" download>下载原图</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="option">
+          <button class="art" type="button" aria-label="放大查看方案 03：空间折叠" data-number="03">
+            <img src="03-folded-space.png" alt="空间折叠：两块错位平面构成空间 S" width="1024" height="1024" />
+          </button>
+          <div class="option-copy">
+            <div class="option-title"><span class="number">03</span><h2>空间折叠</h2></div>
+            <p class="concept">两块错位平面构成空间 S。</p>
+            <div class="option-meta">
+              <span class="palette"><span class="swatches" aria-hidden="true"><i class="swatch" style="--swatch: var(--navy)"></i><i class="swatch" style="--swatch: var(--blue)"></i></span>深蓝 + 亮蓝</span>
+              <a class="download" href="03-folded-space.png" download>下载原图</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="option">
+          <button class="art" type="button" aria-label="放大查看方案 04：事件视界" data-number="04">
+            <img src="04-event-horizon.png" alt="事件视界：偏心圆环与天体" width="1024" height="1024" />
+          </button>
+          <div class="option-copy">
+            <div class="option-title"><span class="number">04</span><h2>事件视界</h2></div>
+            <p class="concept">偏心圆环与天体。</p>
+            <div class="option-meta">
+              <span class="palette"><span class="swatches" aria-hidden="true"><i class="swatch" style="--swatch: var(--black)"></i><i class="swatch" style="--swatch: var(--blue)"></i></span>近黑 + 亮蓝</span>
+              <a class="download" href="04-event-horizon.png" download>下载原图</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="option">
+          <button class="art" type="button" aria-label="放大查看方案 05：天体切片" data-number="05">
+            <img src="05-celestial-slice.png" alt="天体切片：斜向留白分割的天体轮廓" width="1024" height="1024" />
+          </button>
+          <div class="option-copy">
+            <div class="option-title"><span class="number">05</span><h2>天体切片</h2></div>
+            <p class="concept">斜向留白分割的天体轮廓。</p>
+            <div class="option-meta">
+              <span class="palette"><span class="swatches" aria-hidden="true"><i class="swatch" style="--swatch: var(--blue)"></i></span>亮蓝单色</span>
+              <a class="download" href="05-celestial-slice.png" download>下载原图</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="option">
+          <button class="art" type="button" aria-label="放大查看方案 06：深空之门" data-number="06">
+            <img src="06-deep-space-gate.png" alt="深空之门：透视框架表达空间入口" width="1024" height="1024" />
+          </button>
+          <div class="option-copy">
+            <div class="option-title"><span class="number">06</span><h2>深空之门</h2></div>
+            <p class="concept">透视框架表达空间入口。</p>
+            <div class="option-meta">
+              <span class="palette"><span class="swatches" aria-hidden="true"><i class="swatch" style="--swatch: var(--navy)"></i></span>深蓝单色</span>
+              <a class="download" href="06-deep-space-gate.png" download>下载原图</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <footer class="references">
+        <p>设计参考：标志的简化与几何构成方法。</p>
+        <nav aria-label="设计参考链接">
+          <a href="https://www.nasa.gov/image-article/nasas-worm-logo/" target="_blank" rel="noreferrer">NASA Worm</a>
+          <a href="https://www.pentagram.com/work/mit-media-lab" target="_blank" rel="noreferrer">MIT Media Lab</a>
+          <a href="https://www.esa.int/About_Us/Branding_and_Partnerships/Life_story_of_the_ESA_logo" target="_blank" rel="noreferrer">ESA</a>
+        </nav>
+      </footer>
+    </main>
+
+    <dialog class="viewer" aria-labelledby="viewer-title" aria-describedby="viewer-concept">
+      <div class="viewer-header">
+        <div class="viewer-heading"><span class="number" id="viewer-number"></span><h2 id="viewer-title"></h2></div>
+        <button class="close" type="button" autofocus>关闭</button>
+      </div>
+      <img class="viewer-image" alt="" />
+      <div class="viewer-footer">
+        <p id="viewer-concept"></p>
+        <a class="download" id="viewer-download" download>下载原图</a>
+      </div>
+    </dialog>
+
+    <script>
+      const viewer = document.querySelector('.viewer');
+      const viewerImage = viewer.querySelector('.viewer-image');
+      const viewerNumber = document.querySelector('#viewer-number');
+      const viewerTitle = document.querySelector('#viewer-title');
+      const viewerConcept = document.querySelector('#viewer-concept');
+      const viewerDownload = document.querySelector('#viewer-download');
+
+      document.querySelectorAll('.art').forEach((button) => {
+        button.addEventListener('click', () => {
+          const option = button.closest('.option');
+          const sourceImage = button.querySelector('img');
+          viewerNumber.textContent = button.dataset.number;
+          viewerTitle.textContent = option.querySelector('h2').textContent;
+          viewerConcept.textContent = option.querySelector('.concept').textContent;
+          viewerImage.src = sourceImage.src;
+          viewerImage.alt = sourceImage.alt;
+          viewerDownload.href = sourceImage.src;
+          viewer.showModal();
+        });
+      });
+
+      viewer.querySelector('.close').addEventListener('click', () => viewer.close());
+      viewer.addEventListener('click', (event) => {
+        if (event.target !== viewer) return;
+        const bounds = viewer.getBoundingClientRect();
+        const outside = event.clientX < bounds.left || event.clientX > bounds.right ||
+          event.clientY < bounds.top || event.clientY > bounds.bottom;
+        if (outside) viewer.close();
+      });
+    </script>
+  </body>
+</html>

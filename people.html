@@ -30,9 +30,8 @@
       content="https://ntu-space-lab.github.io/assets/images/hero-world.png"
     />
     <title>Team — SPACE Lab</title>
-    <link rel="icon" href="assets/brand/v8/favicon-v10-32.png" sizes="32x32" type="image/png" />
-    <link rel="icon" href="assets/brand/v8/favicon-v10-64.png" sizes="64x64" type="image/png" />
-    <link rel="apple-touch-icon" href="assets/brand/v8/apple-touch-icon-v10.png" />
+    <link rel="icon" href="assets/brand/space-globe-hand-icon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/brand/space-globe-hand-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -41,6 +40,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
+    <script src="people-bio.js" defer></script>
   </head>
   <body data-page="people">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -49,10 +49,11 @@
     <header class="site-header" data-header>
       <a class="space-brand" href="index.html" aria-label="SPACE Lab home">
         <img
-          src="assets/brand/v8/space-logo-v8-approved.png"
+          class="space-wordmark"
+          src="assets/brand/space-logo-robotic-arm.png"
           alt="SPACE Lab"
-          width="1929"
-          height="344"
+          width="2172"
+          height="724"
         />
       </a>
 
@@ -119,6 +120,7 @@
           <h1 id="people-title" data-reveal>One team. Shared vision.</h1>
         </header>
 
+        <!-- Profile icons: Lucide globe / graduation-cap / linkedin and matching envelope. License: assets/vendor/lucide/LICENSE -->
         <div class="people-directory">
           <section class="people-level people-level-faculty" aria-labelledby="faculty-title">
             <header class="people-level-heading" data-reveal>
@@ -127,50 +129,85 @@
             <span class="people-level-axis" aria-hidden="true"></span>
             <div class="people-level-members people-level-members-faculty">
               <article class="person person-featured" data-reveal>
-                <div class="person-portrait person-portrait-featured person-profile-multi">
-                  <img
+                <div class="person-portrait-wrap">
+                  <div class="person-portrait person-portrait-featured">
+                    <img
                     src="assets/images/people/wanhua-li.jpg"
                     alt="Portrait of Wanhua Li"
                     width="1056"
                     height="992"
                     decoding="async"
-                  />
-                  <div class="person-profile-actions" role="group" aria-label="Wanhua Li profiles">
+                    />
+                  </div>
+                  <div class="person-profile-actions person-profile-actions-expanded" role="group" aria-label="Wanhua Li profiles">
                     <a
                       class="person-profile-choice"
                       href="https://li-wanhua.github.io/"
                       target="_blank"
-                      rel="noreferrer"
-                      aria-label="Visit Wanhua Li's personal homepage"
+                      rel="noopener noreferrer"
+                      title="Personal homepage"
+                      aria-label="Wanhua Li — Personal homepage"
                     >
-                      <span class="person-profile-action person-profile-action-homepage" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                          <circle cx="11.1" cy="12.9" r="5.7" />
-                          <path d="M13 6.8h4.9v4.9M17.6 7.1l-6.6 6.6" />
-                          <circle class="person-profile-node" cx="5.8" cy="17.9" r="1.05" />
-                        </svg>
-                      </span>
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0-20M2 12h20" />
+                      </svg>
                     </a>
                     <a
                       class="person-profile-choice"
                       href="https://scholar.google.com/citations?user=I03QnrsAAAAJ"
                       target="_blank"
-                      rel="noreferrer"
-                      aria-label="Visit Wanhua Li's Google Scholar profile"
+                      rel="noopener noreferrer"
+                      title="Google Scholar"
+                      aria-label="Wanhua Li — Google Scholar"
                     >
-                      <span class="person-profile-action person-profile-action-scholar" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                          <path d="m3.6 9.2 8.4-4.4 8.4 4.4-8.4 4.4-8.4-4.4Z" />
-                          <path d="M7.2 11.4v4c2.6 2.4 7 2.4 9.6 0v-4M20.4 9.2v5.7" />
-                          <circle class="person-profile-node" cx="20.4" cy="16.8" r="1.1" />
-                        </svg>
-                      </span>
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0zM22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+                      </svg>
+                    </a>
+                    <a
+                      class="person-profile-choice"
+                      href="https://www.linkedin.com/in/li-wanhua-bb4b3511b/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="LinkedIn"
+                      aria-label="Wanhua Li — LinkedIn"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" />
+                      </svg>
+                    </a>
+                    <a
+                      class="person-profile-choice"
+                      href="mailto:wanhua.li@ntu.edu.sg"
+                      title="Email: wanhua.li@ntu.edu.sg"
+                      aria-label="Email Wanhua Li at wanhua.li@ntu.edu.sg"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" />
+                      </svg>
                     </a>
                   </div>
                 </div>
                 <div class="person-copy">
                   <h3>Wanhua Li</h3>
                   <p>Nanyang Assistant Professor · NTU EEE</p>
+                </div>
+                <div class="person-bio">
+                  <p>
+                    Wanhua Li is a Nanyang Assistant Professor at NTU and founded the SPACE Lab in September 2026.
+                    Previously, he was a postdoctoral fellow at
+                    <a href="https://www.harvard.edu/" target="_blank" rel="noopener noreferrer">Harvard University</a>,
+                    supervised by Prof. <a href="https://vcg.seas.harvard.edu/people" target="_blank" rel="noopener noreferrer">Hanspeter Pfister</a>.
+                    He received his Ph.D. from the Department of Automation at
+                    <a href="https://www.tsinghua.edu.cn/en/" target="_blank" rel="noopener noreferrer">Tsinghua University</a>
+                    in 2022, advised by Prof. <a href="http://ivg.au.tsinghua.edu.cn/Jiwen_Lu/" target="_blank" rel="noopener noreferrer">Jiwen Lu</a>,
+                    Prof. <a href="http://ivg.au.tsinghua.edu.cn/~jfeng/" target="_blank" rel="noopener noreferrer">Jianjiang Feng</a>,
+                    and Prof. <a href="https://www.au.tsinghua.edu.cn/info/1084/1699.htm" target="_blank" rel="noopener noreferrer">Jie Zhou</a>.
+                  </p>
+                  <p>
+                    His research interests mainly include Spatial Intelligence, Neural Rendering, and Physical Intelligence.
+                    His long-term goal is to build visually intelligent systems that can perceive, reason about, and interact with the real world.
+                  </p>
                 </div>
               </article>
             </div>
@@ -183,56 +220,92 @@
             <span class="people-level-axis" aria-hidden="true"></span>
             <div class="people-level-members people-level-members-fellows">
               <article class="person" data-reveal>
-                <a
-                  class="person-portrait person-portrait-photo person-profile-link"
-                  href="https://legenddddd.github.io/"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Visit Li-Jun Zhao's personal homepage"
-                >
-                  <img
+                <div class="person-portrait-wrap">
+                  <button
+                    class="person-portrait person-portrait-photo person-portrait-button"
+                    type="button"
+                    aria-label="Read Li-Jun Zhao's biography"
+                    aria-haspopup="dialog"
+                    aria-controls="li-jun-zhao-bio"
+                    title="View Li-Jun Zhao's biography"
+                    data-person-bio-open="li-jun-zhao-bio"
+                  >
+                    <img
                     src="assets/images/people/li-jun-zhao.jpg"
                     alt="Portrait of Li-Jun Zhao"
                     width="500"
                     height="500"
                     decoding="async"
-                  />
-                  <span class="person-profile-action person-profile-action-homepage" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <circle cx="11.1" cy="12.9" r="5.7" />
-                      <path d="M13 6.8h4.9v4.9M17.6 7.1l-6.6 6.6" />
-                      <circle class="person-profile-node" cx="5.8" cy="17.9" r="1.05" />
-                    </svg>
-                  </span>
-                </a>
+                    />
+                  </button>
+                  <div class="person-profile-actions" role="group" aria-label="Li-Jun Zhao profiles">
+                    <a
+                      class="person-profile-choice"
+                      href="https://legenddddd.github.io/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Personal homepage"
+                      aria-label="Li-Jun Zhao — Personal homepage"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0-20M2 12h20" />
+                      </svg>
+                    </a>
+                    <a
+                      class="person-profile-choice"
+                      href="https://scholar.google.com/citations?user=cQhkgwYAAAAJ"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Google Scholar"
+                      aria-label="Li-Jun Zhao — Google Scholar"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0zM22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+                      </svg>
+                    </a>
+                    <a
+                      class="person-profile-choice"
+                      href="mailto:lijun.zhao@ntu.edu.sg"
+                      title="Email: lijun.zhao@ntu.edu.sg"
+                      aria-label="Email Li-Jun Zhao at lijun.zhao@ntu.edu.sg"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
                 <div class="person-copy">
                   <h3>Li-Jun Zhao</h3>
                   <p>Research Interest: Continual Learning</p>
                 </div>
               </article>
               <article class="person" data-reveal>
-                <a
-                  class="person-portrait person-portrait-photo person-profile-link"
-                  href="https://scholar.google.cz/citations?user=LWu_FiQAAAAJ&amp;hl=zh-CN"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Visit Xumeng Han's Google Scholar profile"
-                >
-                  <img
+                <div class="person-portrait-wrap">
+                  <div class="person-portrait person-portrait-photo">
+                    <img
                     src="assets/images/people/xumeng-han.jpg"
                     alt="Portrait of Xumeng Han"
                     width="413"
                     height="413"
                     decoding="async"
-                  />
-                  <span class="person-profile-action person-profile-action-scholar" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="m3.6 9.2 8.4-4.4 8.4 4.4-8.4 4.4-8.4-4.4Z" />
-                      <path d="M7.2 11.4v4c2.6 2.4 7 2.4 9.6 0v-4M20.4 9.2v5.7" />
-                      <circle class="person-profile-node" cx="20.4" cy="16.8" r="1.1" />
-                    </svg>
-                  </span>
-                </a>
+                    />
+                  </div>
+                  <div class="person-profile-actions" role="group" aria-label="Xumeng Han profiles">
+                    <a
+                      class="person-profile-choice"
+                      href="https://scholar.google.cz/citations?user=LWu_FiQAAAAJ&amp;hl=zh-CN"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Google Scholar"
+                      aria-label="Xumeng Han — Google Scholar"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0zM22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
                 <div class="person-copy">
                   <h3>Xumeng Han</h3>
                   <p>Research Interest: Computer Vision</p>
@@ -248,42 +321,109 @@
             <span class="people-level-axis" aria-hidden="true"></span>
             <div class="people-level-members people-level-members-phd">
               <article class="person" data-reveal>
-                <a
-                  class="person-portrait person-portrait-photo person-profile-link"
-                  href="https://tianshijing.github.io/"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Visit Juanxi Tian's personal homepage"
-                >
-                  <img
+                <div class="person-portrait-wrap">
+                  <button
+                    class="person-portrait person-portrait-photo person-portrait-button"
+                    type="button"
+                    aria-label="Read Juanxi Tian's biography"
+                    aria-haspopup="dialog"
+                    aria-controls="juanxi-tian-bio"
+                    title="View Juanxi Tian's biography"
+                    data-person-bio-open="juanxi-tian-bio"
+                  >
+                    <img
                     src="assets/images/people/juanxi-tian.png"
                     alt="Portrait of Juanxi Tian"
                     width="354"
                     height="472"
                     decoding="async"
-                  />
-                  <span class="person-profile-action person-profile-action-homepage" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <circle cx="11.1" cy="12.9" r="5.7" />
-                      <path d="M13 6.8h4.9v4.9M17.6 7.1l-6.6 6.6" />
-                      <circle class="person-profile-node" cx="5.8" cy="17.9" r="1.05" />
-                    </svg>
-                  </span>
-                </a>
+                    />
+                  </button>
+                  <div class="person-profile-actions person-profile-actions-expanded" role="group" aria-label="Juanxi Tian profiles">
+                    <a
+                      class="person-profile-choice"
+                      href="https://tianshijing.github.io/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Personal homepage"
+                      aria-label="Juanxi Tian — Personal homepage"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0-20M2 12h20" />
+                      </svg>
+                    </a>
+                    <a
+                      class="person-profile-choice"
+                      href="https://scholar.google.com/citations?user=6QB6Q8gAAAAJ"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Google Scholar"
+                      aria-label="Juanxi Tian — Google Scholar"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0zM22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+                      </svg>
+                    </a>
+                    <a
+                      class="person-profile-choice"
+                      href="https://www.linkedin.com/in/juanxi-tian/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="LinkedIn"
+                      aria-label="Juanxi Tian — LinkedIn"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" />
+                      </svg>
+                    </a>
+                    <a
+                      class="person-profile-choice"
+                      href="mailto:JTIAN003@e.ntu.edu.sg"
+                      title="Email: JTIAN003@e.ntu.edu.sg"
+                      aria-label="Email Juanxi Tian at JTIAN003@e.ntu.edu.sg"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
                 <div class="person-copy">
                   <h3>Juanxi Tian <span class="person-cohort">(2026-)</span></h3>
                   <p>Research Interest: World Model, Agentic Multimodal</p>
                 </div>
               </article>
               <article class="person" data-reveal>
-                <div class="person-portrait person-portrait-photo">
-                  <img
+                <div class="person-portrait-wrap">
+                  <button
+                    class="person-portrait person-portrait-photo person-portrait-button"
+                    type="button"
+                    aria-label="Read Jirui Yang's biography"
+                    aria-haspopup="dialog"
+                    aria-controls="jirui-yang-bio"
+                    title="View Jirui Yang's biography"
+                    data-person-bio-open="jirui-yang-bio"
+                  >
+                    <img
                     src="assets/images/people/jirui-yang.png"
                     alt="Portrait of Jirui Yang"
                     width="460"
                     height="460"
                     decoding="async"
-                  />
+                    />
+                  </button>
+                  <div class="person-profile-actions" role="group" aria-label="Jirui Yang profiles">
+                    <a
+                      class="person-profile-choice"
+                      href="mailto:JYANG045@e.ntu.edu.sg"
+                      title="Email: JYANG045@e.ntu.edu.sg"
+                      aria-label="Email Jirui Yang at JYANG045@e.ntu.edu.sg"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
                 <div class="person-copy">
                   <h3>Jirui Yang <span class="person-cohort">(2026-)</span></h3>
@@ -291,59 +431,125 @@
                 </div>
               </article>
               <article class="person" data-reveal>
-                <a
-                  class="person-portrait person-portrait-photo person-profile-link"
-                  href="https://jingsongliang.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Visit Jingsong Liang's personal homepage"
-                >
-                  <img
+                <div class="person-portrait-wrap">
+                  <button
+                    class="person-portrait person-portrait-photo person-portrait-button"
+                    type="button"
+                    aria-label="Read Jingsong Liang's biography"
+                    aria-haspopup="dialog"
+                    aria-controls="jingsong-liang-bio"
+                    title="View Jingsong Liang's biography"
+                    data-person-bio-open="jingsong-liang-bio"
+                  >
+                    <img
                     src="assets/images/people/jingsong-liang.jpg"
                     alt="Portrait of Jingsong Liang"
                     width="827"
                     height="827"
                     decoding="async"
-                  />
-                  <span class="person-profile-action person-profile-action-homepage" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <circle cx="11.1" cy="12.9" r="5.7" />
-                      <path d="M13 6.8h4.9v4.9M17.6 7.1l-6.6 6.6" />
-                      <circle class="person-profile-node" cx="5.8" cy="17.9" r="1.05" />
-                    </svg>
-                  </span>
-                </a>
+                    />
+                  </button>
+                  <div class="person-profile-actions person-profile-actions-expanded" role="group" aria-label="Jingsong Liang profiles">
+                    <a
+                      class="person-profile-choice"
+                      href="https://jingsongliang.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Personal homepage"
+                      aria-label="Jingsong Liang — Personal homepage"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0-20M2 12h20" />
+                      </svg>
+                    </a>
+                    <a
+                      class="person-profile-choice"
+                      href="https://scholar.google.com/citations?user=O8UYCA4AAAAJ"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Google Scholar"
+                      aria-label="Jingsong Liang — Google Scholar"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0zM22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+                      </svg>
+                    </a>
+                    <a
+                      class="person-profile-choice"
+                      href="https://www.linkedin.com/in/jingsongliang/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="LinkedIn"
+                      aria-label="Jingsong Liang — LinkedIn"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" />
+                      </svg>
+                    </a>
+                    <a
+                      class="person-profile-choice"
+                      href="mailto:JINGSONG002@e.ntu.edu.sg"
+                      title="Email: JINGSONG002@e.ntu.edu.sg"
+                      aria-label="Email Jingsong Liang at JINGSONG002@e.ntu.edu.sg"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
                 <div class="person-copy">
                   <h3>Jingsong Liang <span class="person-cohort">(2026-)</span></h3>
                   <p>Research Interest: Embodied Intelligence, Agentic AI</p>
                 </div>
               </article>
               <article class="person" data-reveal>
-                <a
-                  class="person-portrait person-portrait-photo person-profile-link"
-                  href="https://scholar.google.com/citations?user=qo7La8cAAAAJ&amp;hl=zh-CN"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Visit Yanping Fu's Google Scholar profile"
-                >
-                  <img
+                <div class="person-portrait-wrap">
+                  <button
+                    class="person-portrait person-portrait-photo person-portrait-button"
+                    type="button"
+                    aria-label="Read Yanping Fu's biography"
+                    aria-haspopup="dialog"
+                    aria-controls="yanping-fu-bio"
+                    title="View Yanping Fu's biography"
+                    data-person-bio-open="yanping-fu-bio"
+                  >
+                    <img
                     src="assets/images/people/yanping-fu.jpg"
                     alt="Portrait of Yanping Fu"
                     width="1000"
                     height="1000"
                     decoding="async"
-                  />
-                  <span class="person-profile-action person-profile-action-scholar" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="m3.6 9.2 8.4-4.4 8.4 4.4-8.4 4.4-8.4-4.4Z" />
-                      <path d="M7.2 11.4v4c2.6 2.4 7 2.4 9.6 0v-4M20.4 9.2v5.7" />
-                      <circle class="person-profile-node" cx="20.4" cy="16.8" r="1.1" />
-                    </svg>
-                  </span>
-                </a>
+                    />
+                  </button>
+                  <div class="person-profile-actions" role="group" aria-label="Yanping Fu profiles">
+                    <a
+                      class="person-profile-choice"
+                      href="https://scholar.google.com/citations?user=qo7La8cAAAAJ&amp;hl=zh-CN"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Google Scholar"
+                      aria-label="Yanping Fu — Google Scholar"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0zM22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+                      </svg>
+                    </a>
+                    <a
+                      class="person-profile-choice"
+                      href="mailto:FUYA0004@e.ntu.edu.sg"
+                      title="Email: FUYA0004@e.ntu.edu.sg"
+                      aria-label="Email Yanping Fu at FUYA0004@e.ntu.edu.sg"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
                 <div class="person-copy">
                   <h3>Yanping Fu <span class="person-cohort">(2026-)</span></h3>
-                  <p>Research Interest: Computer Vision, Autonomous Driving</p>
+                  <p>Research Interest: Embodied AI, Autonomous Driving</p>
                 </div>
               </article>
             </div>
@@ -356,14 +562,36 @@
             <span class="people-level-axis" aria-hidden="true"></span>
             <div class="people-level-members people-level-members-assistants">
               <article class="person" data-reveal>
-                <div class="person-portrait person-portrait-photo">
-                  <img
+                <div class="person-portrait-wrap">
+                  <button
+                    class="person-portrait person-portrait-photo person-portrait-button"
+                    type="button"
+                    aria-label="Read Shizhe Zhang's biography"
+                    aria-haspopup="dialog"
+                    aria-controls="shizhe-zhang-bio"
+                    title="View Shizhe Zhang's biography"
+                    data-person-bio-open="shizhe-zhang-bio"
+                  >
+                    <img
                     src="assets/images/people/shizhe-zhang.jpg"
                     alt="Portrait of Shizhe Zhang"
                     width="1000"
                     height="1000"
                     decoding="async"
-                  />
+                    />
+                  </button>
+                  <div class="person-profile-actions" role="group" aria-label="Shizhe Zhang profiles">
+                    <a
+                      class="person-profile-choice"
+                      href="mailto:shizhe.zhang@ntu.edu.sg"
+                      title="Email: shizhe.zhang@ntu.edu.sg"
+                      aria-label="Email Shizhe Zhang at shizhe.zhang@ntu.edu.sg"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
                 <div class="person-copy">
                   <h3>Shizhe Zhang</h3>
@@ -371,28 +599,53 @@
                 </div>
               </article>
               <article class="person" data-reveal>
-                <a
-                  class="person-portrait person-portrait-photo person-profile-link"
-                  href="https://alitaheri2002.github.io/"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Visit Taheri Ghahrizjani Ali's personal homepage"
-                >
-                  <img
+                <div class="person-portrait-wrap">
+                  <div class="person-portrait person-portrait-photo">
+                    <img
                     src="assets/images/people/taheri-ghahrizjani-ali.jpg"
                     alt="Portrait of Taheri Ghahrizjani Ali"
                     width="1089"
                     height="1400"
                     decoding="async"
-                  />
-                  <span class="person-profile-action person-profile-action-homepage" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <circle cx="11.1" cy="12.9" r="5.7" />
-                      <path d="M13 6.8h4.9v4.9M17.6 7.1l-6.6 6.6" />
-                      <circle class="person-profile-node" cx="5.8" cy="17.9" r="1.05" />
-                    </svg>
-                  </span>
-                </a>
+                    />
+                  </div>
+                  <div class="person-profile-actions" role="group" aria-label="Taheri Ghahrizjani Ali profiles">
+                    <a
+                      class="person-profile-choice"
+                      href="https://alitaheri2002.github.io/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Personal homepage"
+                      aria-label="Taheri Ghahrizjani Ali — Personal homepage"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0-20M2 12h20" />
+                      </svg>
+                    </a>
+                    <a
+                      class="person-profile-choice"
+                      href="https://scholar.google.com/citations?user=EPblwPQAAAAJ"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Google Scholar"
+                      aria-label="Taheri Ghahrizjani Ali — Google Scholar"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0zM22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+                      </svg>
+                    </a>
+                    <a
+                      class="person-profile-choice"
+                      href="mailto:ali.tg@ntu.edu.sg"
+                      title="Email: ali.tg@ntu.edu.sg"
+                      aria-label="Email Taheri Ghahrizjani Ali at ali.tg@ntu.edu.sg"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
                 <div class="person-copy">
                   <h3>Taheri Ghahrizjani Ali</h3>
                   <p>Research Interest: Trustworthy Machine Learning, Agentic AI</p>
@@ -404,14 +657,177 @@
       </section>
     </main>
 
+    <dialog class="person-bio-dialog" id="shizhe-zhang-bio" aria-labelledby="shizhe-bio-name">
+      <button class="person-bio-close" type="button" aria-label="Close biography" data-person-bio-close autofocus>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg>
+      </button>
+      <div class="person-bio-layout">
+        <div class="person-bio-photo">
+          <img src="assets/images/people/shizhe-zhang.jpg" alt="Portrait of Shizhe Zhang" width="1000" height="1000" decoding="async" />
+        </div>
+        <div class="person-bio-content">
+          <header class="person-bio-heading">
+            <p class="person-bio-role">Research Associate · NTU SPACE Lab</p>
+            <h2 id="shizhe-bio-name">Shizhe Zhang</h2>
+          </header>
+          <div class="person-bio-text">
+            <p>Shizhe Zhang is a research associate at the SPAtial Computing and Embodied intelligence (SPACE) Lab. He received his M.S. degree in Robotics from the Department of Mechanical Engineering at the National University of Singapore, where he was advised by Prof. Guillaume Sartoretti, and his B.S. degree from the College of Mechanical and Transportation Engineering at Chongqing University.</p>
+            <p>His research focuses on evolving and collaborative embodied intelligence, aiming to build robotic agents that can continually adapt and improve their policies through interaction with the physical world. His interests include whole-body humanoid manipulation, multi-robot perception, coordinated execution, and collaborative decision-making, with the broader goal of enabling heterogeneous robots to learn, act, and collaborate effectively in complex real-world environments.</p>
+          </div>
+          <footer class="person-bio-contact">
+            <a href="mailto:shizhe.zhang@ntu.edu.sg" aria-label="Email Shizhe Zhang at shizhe.zhang@ntu.edu.sg">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" /></svg>
+              <span>shizhe.zhang@ntu.edu.sg</span>
+            </a>
+          </footer>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="person-bio-dialog" id="li-jun-zhao-bio" aria-labelledby="li-jun-zhao-bio-name">
+      <button class="person-bio-close" type="button" aria-label="Close biography" data-person-bio-close autofocus>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg>
+      </button>
+      <div class="person-bio-layout">
+        <div class="person-bio-photo">
+          <img src="assets/images/people/li-jun-zhao.jpg" alt="Portrait of Li-Jun Zhao" width="500" height="500" decoding="async" />
+        </div>
+        <div class="person-bio-content">
+          <header class="person-bio-heading">
+            <p class="person-bio-role">Research Fellow · NTU SPACE Lab</p>
+            <h2 id="li-jun-zhao-bio-name">Li-Jun Zhao</h2>
+          </header>
+          <div class="person-bio-text">
+            <p>Li-Jun Zhao is currently a Research Fellow at Nanyang Technological University, Singapore. She received the B.S. and Ph.D. degrees in software engineering from Shandong University, Jinan, China, in 2022 and 2026, respectively.</p>
+            <p>Her research interests include continual learning, few-shot learning, and fine-grained image analysis.</p>
+          </div>
+          <footer class="person-bio-contact">
+            <a href="mailto:lijun.zhao@ntu.edu.sg" aria-label="Email Li-Jun Zhao at lijun.zhao@ntu.edu.sg">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" /></svg>
+              <span>lijun.zhao@ntu.edu.sg</span>
+            </a>
+          </footer>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="person-bio-dialog" id="juanxi-tian-bio" aria-labelledby="juanxi-bio-name">
+      <button class="person-bio-close" type="button" aria-label="Close biography" data-person-bio-close autofocus>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg>
+      </button>
+      <div class="person-bio-layout">
+        <div class="person-bio-photo">
+          <img src="assets/images/people/juanxi-tian.png" alt="Portrait of Juanxi Tian" width="354" height="472" decoding="async" />
+        </div>
+        <div class="person-bio-content">
+          <header class="person-bio-heading">
+            <p class="person-bio-role">PhD Student · NTU SPACE Lab</p>
+            <h2 id="juanxi-bio-name">Juanxi Tian</h2>
+          </header>
+          <div class="person-bio-text">
+            <p>Juanxi Tian is a PhD student at Nanyang Technological University (NTU), working with Wanhua Li and Jianfei Yang. He received his B.Sc. (Honours) from Hong Kong Baptist University, with a focus on computer science and artificial intelligence. He has interned at Shanghai AI Laboratory, Alibaba, and Ant Group, as well as at Tencent through its Qingyun Talent Program. He is also the founder and lead of OpenEnvision, a research hub that fosters collaboration between academia and industry.</p>
+            <p>His research focuses on agentic multimodal intelligence and world models, with the overarching goal of advancing general visual intelligence. He serves as a reviewer for top-tier AI conferences, including ICML, NeurIPS, ICLR, CVPR, ICCV, and ECCV, and for journals such as IEEE TPAMI and TMLR.</p>
+          </div>
+          <footer class="person-bio-contact">
+            <a href="mailto:JTIAN003@e.ntu.edu.sg" aria-label="Email Juanxi Tian at JTIAN003@e.ntu.edu.sg">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" /></svg>
+              <span>JTIAN003@e.ntu.edu.sg</span>
+            </a>
+          </footer>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="person-bio-dialog" id="jirui-yang-bio" aria-labelledby="jirui-bio-name">
+      <button class="person-bio-close" type="button" aria-label="Close biography" data-person-bio-close autofocus>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg>
+      </button>
+      <div class="person-bio-layout">
+        <div class="person-bio-photo">
+          <img src="assets/images/people/jirui-yang.png" alt="Portrait of Jirui Yang" width="460" height="460" decoding="async" />
+        </div>
+        <div class="person-bio-content">
+          <header class="person-bio-heading">
+            <p class="person-bio-role">PhD Student · NTU SPACE Lab</p>
+            <h2 id="jirui-bio-name">Jirui Yang</h2>
+          </header>
+          <div class="person-bio-text">
+            <p>Jirui Yang is a PhD student at the NTU Space Lab, Nanyang Technological University. He received his B.Eng. degree in Computer Science and Technology from Tsinghua University in 2026.</p>
+            <p>His research interests lie broadly in computer vision and generative modeling, with a particular focus on video generation, 3D/4D reconstruction and generation.</p>
+          </div>
+          <footer class="person-bio-contact">
+            <a href="mailto:JYANG045@e.ntu.edu.sg" aria-label="Email Jirui Yang at JYANG045@e.ntu.edu.sg">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" /></svg>
+              <span>JYANG045@e.ntu.edu.sg</span>
+            </a>
+          </footer>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="person-bio-dialog" id="jingsong-liang-bio" aria-labelledby="jingsong-bio-name">
+      <button class="person-bio-close" type="button" aria-label="Close biography" data-person-bio-close autofocus>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg>
+      </button>
+      <div class="person-bio-layout">
+        <div class="person-bio-photo">
+          <img src="assets/images/people/jingsong-liang.jpg" alt="Portrait of Jingsong Liang" width="827" height="827" decoding="async" />
+        </div>
+        <div class="person-bio-content">
+          <header class="person-bio-heading">
+            <p class="person-bio-role">PhD Student · NTU SPACE Lab</p>
+            <h2 id="jingsong-bio-name">Jingsong Liang</h2>
+          </header>
+          <div class="person-bio-text">
+            <p>Jingsong Liang is a PhD student in Robotics and AI at Nanyang Technological University, supervised by Prof. Wanhua Li and Prof. Chen Lv. He is a recipient of the IGP Artificial Intelligence-X Scholarship.</p>
+            <p>His research centers on Multimodal Embodied Generalist Agents (MEGA), aiming to build general-purpose agents that integrate multimodal perception, embodied reasoning, autonomous planning, and continual self-improvement in the physical world.</p>
+          </div>
+          <footer class="person-bio-contact">
+            <a href="mailto:JINGSONG002@e.ntu.edu.sg" aria-label="Email Jingsong Liang at JINGSONG002@e.ntu.edu.sg">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" /></svg>
+              <span>JINGSONG002@e.ntu.edu.sg</span>
+            </a>
+          </footer>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="person-bio-dialog" id="yanping-fu-bio" aria-labelledby="yanping-bio-name">
+      <button class="person-bio-close" type="button" aria-label="Close biography" data-person-bio-close autofocus>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg>
+      </button>
+      <div class="person-bio-layout">
+        <div class="person-bio-photo">
+          <img src="assets/images/people/yanping-fu.jpg" alt="Portrait of Yanping Fu" width="1000" height="1000" decoding="async" />
+        </div>
+        <div class="person-bio-content">
+          <header class="person-bio-heading">
+            <p class="person-bio-role">PhD Student · NTU SPACE Lab</p>
+            <h2 id="yanping-bio-name">Yanping Fu</h2>
+          </header>
+          <div class="person-bio-text">
+            <p>Yanping Fu is a first-year Ph.D. student in the SPACE Lab at NTU (Fall 2026), advised by Prof. Wanhua Li. He received his Master's degree from the Institute of Computing Technology, Chinese Academy of Sciences in 2026, where he completed three years of graduate study.</p>
+            <p>His research interests lie in Embodied AI and Autonomous Driving. He serves as a reviewer for NeurIPS, IEEE RA-L, and ACM TIST.</p>
+          </div>
+          <footer class="person-bio-contact">
+            <a href="mailto:FUYA0004@e.ntu.edu.sg" aria-label="Email Yanping Fu at FUYA0004@e.ntu.edu.sg">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" /></svg>
+              <span>FUYA0004@e.ntu.edu.sg</span>
+            </a>
+          </footer>
+        </div>
+      </div>
+    </dialog>
+
     <footer class="site-footer section-shell">
       <div class="footer-brand">
         <a href="index.html" aria-label="SPACE Lab home">
           <img
-            src="assets/brand/v8/space-logo-v8-approved.png"
+            class="space-wordmark"
+          src="assets/brand/space-logo-robotic-arm.png"
             alt="SPACE Lab"
-            width="1929"
-            height="344"
+            width="2172"
+            height="724"
           />
         </a>
         <p class="footer-lab-name">Spatial Computing and Embodied Intelligence Lab</p>

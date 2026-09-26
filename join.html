@@ -36,16 +36,15 @@
       content="https://ntu-space-lab.github.io/assets/images/join-portal.png"
     />
     <title>Join — SPACE Lab</title>
-    <link rel="icon" href="assets/brand/v8/favicon-v10-32.png" sizes="32x32" type="image/png" />
-    <link rel="icon" href="assets/brand/v8/favicon-v10-64.png" sizes="64x64" type="image/png" />
-    <link rel="apple-touch-icon" href="assets/brand/v8/apple-touch-icon-v10.png" />
+    <link rel="icon" href="assets/brand/space-globe-hand-icon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/brand/space-globe-hand-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260822-campus-collage-2" />
+    <link rel="stylesheet" href="styles.css?v=20260924-join-email-icon" />
     <script src="script.js" defer></script>
   </head>
   <body data-page="join">
@@ -55,10 +54,11 @@
     <header class="site-header" data-header>
       <a class="space-brand" href="index.html" aria-label="SPACE Lab home">
         <img
-          src="assets/brand/v8/space-logo-v8-approved.png"
+          class="space-wordmark"
+          src="assets/brand/space-logo-robotic-arm.png"
           alt="SPACE Lab"
-          width="1929"
-          height="344"
+          width="2172"
+          height="724"
         />
       </a>
 
@@ -233,22 +233,111 @@
 
         <div class="join-application-list">
           <article class="join-application" data-reveal>
-            <h3>Ph.D.</h3>
-            <p>Please email your <strong>CV</strong>, <strong>transcripts</strong>, and <strong>research interests</strong>.</p>
+            <div class="join-application-intro">
+              <h3>
+                <svg class="join-role-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="m2 9 10-5 10 5-10 5L2 9Z" />
+                  <path d="M6 11v5c3.3 2.7 8.7 2.7 12 0v-5M22 9v6" />
+                </svg>
+                <span class="join-role-title">Ph.D.</span>
+              </h3>
+              <div class="join-application-illustration">
+                <img src="assets/images/join/phd-line-art.webp" alt="" width="760" height="760" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="join-application-details">
+              <p>Please email your <strong>CV</strong>, <strong>transcripts</strong>, and <strong>research interests</strong>.</p>
+              <p>Prospective Ph.D. students may explore these funding opportunities. Please check each programme's eligibility and application requirements:</p>
+              <ul class="join-funding-list">
+                <li><a href="https://www.ntu.edu.sg/admissions/graduate/financialmatters/scholarships/rss" target="_blank" rel="noopener noreferrer">NTU Research Scholarship</a></li>
+                <li><a href="https://www.ntu.edu.sg/admissions/graduate/financialmatters/scholarships/npgs" target="_blank" rel="noopener noreferrer">Nanyang President's Graduate Scholarship (NPGS)</a></li>
+                <li><a href="https://aisingapore.org/research/phd-fellowship-programme/" target="_blank" rel="noopener noreferrer">AI Singapore PhD Fellowship</a></li>
+              </ul>
+            </div>
           </article>
           <article class="join-application" data-reveal>
-            <h3>Postdocs</h3>
-            <p>Please email your <strong>CV</strong>, <strong>representative papers</strong>, and a <strong>research statement</strong>.</p>
+            <div class="join-application-intro">
+              <h3>
+                <svg class="join-role-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <rect x="3" y="7" width="18" height="14" rx="2" />
+                  <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12a20 20 0 0 0 18 0M10 13v2h4v-2" />
+                </svg>
+                <span class="join-role-title">Postdocs</span>
+              </h3>
+              <div class="join-application-illustration">
+                <img src="assets/images/join/postdocs-line-art.webp" alt="" width="760" height="760" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="join-application-details">
+              <p>Please email your <strong>CV</strong>, <strong>representative papers</strong>, and a <strong>research statement</strong>.</p>
+              <p>Researchers proposing to use AI for scientific discovery may also consider the <a href="https://www.ntu.edu.sg/research/research-careers/ntu-ai-for-x-postdoctoral-fellowship" target="_blank" rel="noopener noreferrer">NTU AI-for-X Postdoctoral Fellowship</a>. Review NTU's eligibility, mentor, and application requirements before applying.</p>
+            </div>
           </article>
           <article class="join-application" data-reveal>
-            <h3>Visiting Students <span>&amp;</span> Research Interns</h3>
+            <div class="join-application-intro">
+              <h3>
+                <svg class="join-role-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9S14.5 18.5 12 21M12 3c-2.5 2.5-3.8 5.5-3.8 9S9.5 18.5 12 21" />
+                </svg>
+                <span class="join-role-title">Visiting Students <span class="join-role-ampersand">&amp;</span> Research Interns</span>
+              </h3>
+              <div class="join-application-illustration">
+                <img src="assets/images/join/visiting-students-interns-line-art.webp" alt="" width="760" height="760" loading="lazy" decoding="async" />
+              </div>
+            </div>
             <p>
               Please email your <strong>CV</strong>, <strong>transcripts</strong>, and
-              <strong>research interests</strong>. The minimum visit length is
-              <strong>six months</strong>.
+              <strong>research interests</strong>. In your message, briefly describe
+              the research direction you hope to explore, relevant projects or
+              skills you would bring, and your preferred start date. The minimum
+              visit length is <strong>six months</strong>.
             </p>
           </article>
         </div>
+      </section>
+
+      <section class="join-resources section-shell" aria-labelledby="join-resources-title">
+        <div class="join-section-label" data-reveal>
+          <h2 id="join-resources-title">Useful links</h2>
+        </div>
+        <ul class="join-resources-list" data-reveal>
+          <li>
+            <a href="https://www.ntu.edu.sg/" target="_blank" rel="noopener noreferrer">
+              <span class="join-resource-type">University</span>
+              <span class="join-resource-title">NTU Singapore</span>
+              <span class="join-resource-description">Explore the university and campus.</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.ntu.edu.sg/eee" target="_blank" rel="noopener noreferrer">
+              <span class="join-resource-type">School</span>
+              <span class="join-resource-title">NTU EEE</span>
+              <span class="join-resource-description">Learn about our school and its research.</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.ntu.edu.sg/eee/admissions/programmes/graduate-programmes/detail/eee-doctor-of-philosophy-%28ph.d%29-programme" target="_blank" rel="noopener noreferrer">
+              <span class="join-resource-type">Programme</span>
+              <span class="join-resource-title">EEE Ph.D. Programme</span>
+              <span class="join-resource-description">Review the degree, requirements, and research areas.</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.ntu.edu.sg/admissions/graduate/radmissionguide" target="_blank" rel="noopener noreferrer">
+              <span class="join-resource-type">Admissions</span>
+              <span class="join-resource-title">Research Admissions Guide</span>
+              <span class="join-resource-description">Check the application steps, documents, and deadlines.</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://gradadmissions.ntu.edu.sg/apply/" target="_blank" rel="noopener noreferrer">
+              <span class="join-resource-type">Apply</span>
+              <span class="join-resource-title">Ph.D. Application Portal</span>
+              <span class="join-resource-description">Submit your graduate research application to NTU.</span>
+            </a>
+          </li>
+        </ul>
       </section>
 
       <section class="join-contact section-shell" aria-labelledby="contact-title">
@@ -257,7 +346,13 @@
             <h2 id="contact-title">Tell us where you fit.</h2>
           </div>
           <div class="join-contact-details">
-            <a href="mailto:wanhua.li@ntu.edu.sg">wanhua.li [AT] ntu [DOT] edu [DOT] sg</a>
+            <a href="mailto:wanhua.li@ntu.edu.sg">
+              <svg class="join-email-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <rect x="2.5" y="5" width="19" height="14" rx="2" />
+                <path d="m3.5 7 8.5 6.5L20.5 7" />
+              </svg>
+              <span>wanhua.li [AT] ntu [DOT] edu [DOT] sg</span>
+            </a>
             <p>
               Emails that clearly describe your fit with the group and include the
               materials above are more likely to receive a timely response. If there
@@ -272,10 +367,11 @@
       <div class="footer-brand">
         <a href="index.html" aria-label="SPACE Lab home">
           <img
-            src="assets/brand/v8/space-logo-v8-approved.png"
+            class="space-wordmark"
+          src="assets/brand/space-logo-robotic-arm.png"
             alt="SPACE Lab"
-            width="1929"
-            height="344"
+            width="2172"
+            height="724"
           />
         </a>
         <p class="footer-lab-name">Spatial Computing and Embodied Intelligence Lab</p>

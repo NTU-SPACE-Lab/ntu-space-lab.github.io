@@ -1,0 +1,164 @@
+"""Build the Shizhe typography lockups from the supplied logo reference.
+
+The wordmark is extracted from the original raster so its letterforms stay exact.
+The current refined mark is generated raster artwork embedded in the SVG lockup.
+The PNG files are export copies.
+"""
+
+from __future__ import annotations
+
+import base64
+from io import BytesIO
+from pathlib import Path
+from PIL import Image
+
+
+ROOT = Path(__file__).resolve().parent
+SOURCE = ROOT / "reference-shizhe.png"
+
+
+def extract_type(box: tuple[int, int, int, int], dest: str) -> str:
+    source = Image.open(SOURCE).convert("RGB").crop(box)
+    rgba = Image.new("RGBA", source.size)
+    result = []
+    pixels = source.get_flattened_data() if hasattr(source, "get_flattened_data") else source.getdata()
+    for index, (red, green, blue) in enumerate(pixels):
+        x = index % source.width + box[0]
+        y = index // source.width + box[1]
+        if 795 <= x <= 860 and y <= 516:
+            result.append((0, 0, 0, 0))
+            continue
+        low = min(red, green, blue)
+        # The supplied wordmark sits on white. Reverse its white matte, while
+        # dropping the faint globe traces above the letter tops.
+        if low > 220:
+            result.append((0, 0, 0, 0))
+            continue
+        alpha = 255 - low
+        if alpha < 20:
+            result.append((0, 0, 0, 0))
+            continue
+        channel = lambda value: max(0, min(255, round((value - low) * 255 / alpha)))
+        result.append((channel(red), channel(green), channel(blue), alpha))
+    rgba.putdata(result)
+    rgba.save(ROOT / dest)
+    buffer = BytesIO()
+    rgba.save(buffer, format="PNG")
+    return base64.b64encode(buffer.getvalue()).decode("ascii")
+
+
+ICON_DEFS = """
+  <defs>
+    <linearGradient id="orbit" x1="0" x2="1" y1="1" y2="0">
+      <stop stop-color="#163A70"/>
+      <stop offset=".52" stop-color="#2869B8"/>
+      <stop offset="1" stop-color="#4D9FBB"/>
+    </linearGradient>
+    <radialGradient id="globe" cx=".30" cy=".22" r=".9">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset=".62" stop-color="#EAF3FC"/>
+      <stop offset="1" stop-color="#D5E5F7"/>
+    </radialGradient>
+    <linearGradient id="head" x1=".18" x2=".84" y1=".12" y2=".92">
+      <stop stop-color="#2767A7"/>
+      <stop offset=".48" stop-color="#194B82"/>
+      <stop offset="1" stop-color="#102E56"/>
+    </linearGradient>
+    <radialGradient id="origin" cx=".32" cy=".26" r=".82">
+      <stop stop-color="#A8E0F2"/>
+      <stop offset=".43" stop-color="#4C9BCB"/>
+      <stop offset="1" stop-color="#1B558F"/>
+    </radialGradient>
+    <clipPath id="globeClip"><circle cx="180" cy="180" r="113"/></clipPath>
+  </defs>
+"""
+
+ICON_BODY = """
+  <g id="shizhe-spatial-mark">
+    <!-- The rear orbit is visible beyond the globe. -->
+    <ellipse cx="180" cy="180" rx="163" ry="68" transform="rotate(-24 180 180)"
+      fill="none" stroke="url(#orbit)" stroke-width="7"/>
+
+    <circle cx="180" cy="180" r="113" fill="url(#globe)" stroke="#527CB0" stroke-width="4"/>
+    <g clip-path="url(#globeClip)" fill="none" stroke="#91B3D7" stroke-width="2.4" opacity=".57">
+      <ellipse cx="180" cy="180" rx="52" ry="113"/>
+      <ellipse cx="180" cy="180" rx="91" ry="113"/>
+      <path d="M67 180H293M74 141C136 164 224 164 286 141M75 219C138 197 222 197 285 219"/>
+      <path d="M98 104C133 132 226 133 262 104M98 256C136 228 224 227 262 256"/>
+    </g>
+
+    <!-- A left-facing human profile gives the spatial mark an embodied center. -->
+    <g id="embodied-profile">
+      <path d="M216 125C203 115 187 112 172 116C153 121 143 137 142 155
+        C141 161 139 166 134 169L119 175C115 177 116 181 120 183
+        L134 187L131 192C130 196 134 199 140 200C144 212 154 220 169 223
+        L169 236C148 240 133 252 126 272
+        H239C233 254 218 241 198 237L198 219C217 208 227 190 227 168
+        C227 148 223 134 216 125Z" fill="url(#head)" stroke="#FFFFFF"
+        stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M150 173C156 169 161 169 166 172" fill="none" stroke="#D8EAF9"
+        stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="158" cy="176" r="2.9" fill="#FFFFFF"/>
+      <path d="M193 172C200 169 204 175 202 181C201 186 197 189 192 189"
+        fill="none" stroke="#86B4DB" stroke-width="3" stroke-linecap="round"/>
+      <path d="M166 224C177 228 189 227 198 219" fill="none" stroke="#6DA0CF"
+        stroke-width="2.5" opacity=".75"/>
+    </g>
+
+    <!-- The forward sweep closes the ring and keeps the symbol legible small. -->
+    <path d="M37 249C93 289 239 222 329 124" fill="none" stroke="#FFFFFF"
+      stroke-width="13.5" stroke-linecap="round"/>
+    <path d="M37 249C93 289 239 222 329 124" fill="none" stroke="url(#orbit)"
+      stroke-width="8" stroke-linecap="round"/>
+    <!-- The origin is attached to the rear orbit, with a clear nested center. -->
+    <circle cx="298" cy="92" r="12.5" fill="url(#origin)" stroke="#FFFFFF" stroke-width="3"/>
+    <circle cx="294.5" cy="88.5" r="2.8" fill="#EAF9FF" opacity=".9"/>
+  </g>
+"""
+
+
+def svg_shell(width: int, height: int, content: str, title: str) -> str:
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
+        f'viewBox="0 0 {width} {height}" role="img" aria-label="{title}">\n'
+        f'  <title>{title}</title>\n{ICON_DEFS}\n{content}\n</svg>\n'
+    )
+
+
+def main() -> None:
+    # Each crop comes from slide 3, labelled "Shizhe" in the PowerPoint.
+    short_data = extract_type((120, 502, 1412, 711), "shizhe-space.png")
+
+    generated_mark = ROOT / "mark-robot-saturn.png"
+    mark_data = base64.b64encode(generated_mark.read_bytes()).decode("ascii")
+    icon_body = (
+        '<image x="20" y="61" width="320" height="240" '
+        f'href="data:image/png;base64,{mark_data}"/>'
+    )
+
+    mark = svg_shell(360, 360, icon_body, "SPACE Lab left-facing robot head with Saturn rings")
+    (ROOT / "space-shizhe-mark.svg").write_text(mark)
+
+    horizontal = svg_shell(
+        1660,
+        330,
+        f'<g transform="translate(-12 -22) scale(1.08)">{icon_body}</g>\n'
+        f'<image x="368" y="64" width="1276" height="206" '
+        f'href="data:image/png;base64,{short_data}"/>',
+        "SPACE Lab, Shizhe typography with refined spatial globe mark",
+    )
+    (ROOT / "space-shizhe-horizontal.svg").write_text(horizontal)
+
+    compact = svg_shell(
+        1660,
+        330,
+        f'<g transform="translate(-12 -22) scale(1.08)">{icon_body}</g>\n'
+        f'<image x="368" y="64" width="1276" height="206" '
+        f'href="data:image/png;base64,{short_data}"/>',
+        "SPACE Lab compact horizontal logo with Shizhe typography",
+    )
+    (ROOT / "space-shizhe-compact.svg").write_text(compact)
+
+
+if __name__ == "__main__":
+    main()

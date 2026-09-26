@@ -1,0 +1,73 @@
+/* Full-screen geographic flight; imagery carries the story. */
+body.space-intro-playing { overflow: hidden; }
+.space-intro {
+  --intro-gutter: clamp(24px, 3.3vw, 64px);
+  position: fixed;
+  z-index: 3000;
+  inset: 0;
+  display: none;
+  overflow: hidden;
+  isolation: isolate;
+  background: #03070c;
+  color: #fff;
+  transition: opacity 800ms ease;
+}
+html.space-intro-pending .space-intro { display: block; }
+.space-intro.is-leaving { opacity: 0; pointer-events: none; }
+.space-intro-scene,
+.space-intro-school,
+.space-intro-shade { position: absolute; inset: 0; }
+.space-intro-scene { opacity: 0; transition: opacity 1000ms ease; }
+.space-intro.is-ready .space-intro-scene { opacity: 1; }
+.space-intro-scene .cesium-widget,
+.space-intro-scene .cesium-widget canvas { width: 100%; height: 100%; }
+.space-intro-scene .cesium-widget canvas { display: block; }
+.space-intro-school { opacity: 0; background: #03070c; will-change: opacity; }
+.space-intro-school img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 50%; will-change: transform; }
+.space-intro-shade { pointer-events: none; background: linear-gradient(180deg, rgba(2, 6, 12, .12), transparent 15%, transparent 78%, rgba(2, 6, 12, .55)); }
+.space-intro-controls { position: absolute; top: max(26px, env(safe-area-inset-top)); right: var(--intro-gutter); display: flex; align-items: center; gap: 10px; }
+.space-intro-controls button { height: 42px; border: 1px solid rgba(255, 255, 255, .36); border-radius: 30px; background: rgba(3, 7, 12, .25); color: #fff; font: inherit; font-size: 12px; cursor: pointer; transition: background .2s, border-color .2s; }
+.space-intro-controls button:hover { background: rgba(255, 255, 255, .16); border-color: #fff; }
+.space-intro.is-school .space-intro-controls button { background: rgba(3, 7, 12, .56); }
+.space-intro-controls button:focus-visible { outline: 2px solid white; outline-offset: 4px; }
+.space-intro-controls button:disabled { visibility: hidden; }
+.space-intro-skip { display: flex; align-items: center; gap: 14px; padding: 0 19px; }
+.space-intro-skip span { font-size: 17px; }
+.space-intro-pause { display: grid; width: 42px; place-items: center; padding: 0; }
+.space-intro-pause svg { fill: none; stroke: currentColor; stroke-width: 1.5; }
+.space-intro-school-caption { position: absolute; left: var(--intro-gutter); bottom: 96px; opacity: 0; transform: translateY(10px); transition: opacity 900ms ease, transform 900ms ease; text-shadow: 0 2px 30px rgba(0, 0, 0, .6); }
+.space-intro.is-school .space-intro-school-caption { opacity: 1; transform: none; }
+.space-intro-school-caption h2 { margin: 0 0 7px; color: #fff; font-size: clamp(27px, 3vw, 46px); font-weight: 400; letter-spacing: -.035em; line-height: 1.15; }
+.space-intro-school-caption p { margin: 0; font-size: clamp(11px, 1vw, 14px); color: rgba(255, 255, 255, .8); line-height: 1.5; }
+.space-intro-progress { position: absolute; bottom: 58px; left: var(--intro-gutter); right: var(--intro-gutter); height: 1px; background: rgba(255, 255, 255, .2); }
+.space-intro-progress span { display: block; width: 100%; height: 1px; background: rgba(255, 255, 255, .8); transform: scaleX(0); transform-origin: left; }
+.space-intro-status { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.space-intro-credits { position: absolute; right: var(--intro-gutter); left: var(--intro-gutter); bottom: 20px; color: rgba(255, 255, 255, .62); font-size: 9px; line-height: 1.5; }
+.space-intro-credits a { color: inherit; }
+.space-intro-credits a:hover { color: #fff; }
+.space-intro-credits .cesium-credit-logoContainer { display: inline; }
+.space-intro-credits .cesium-credit-logoContainer img { display: inline-block; width: 76px; height: auto; margin-right: 8px; vertical-align: middle; }
+.space-intro-credits .cesium-credit-textContainer { display: inline; }
+.space-intro-credits .cesium-credit-expand-link { padding-left: 8px; }
+.space-intro-photo-credit { position: absolute; left: var(--intro-gutter); bottom: 22px; font-size: 9px; color: rgba(255, 255, 255, .66); visibility: hidden; }
+.space-intro.is-school-photo .space-intro-credits { visibility: hidden; }
+.space-intro.is-school-photo .space-intro-photo-credit { visibility: visible; }
+.space-intro-destination { position: absolute; top: 0; left: 0; pointer-events: none; opacity: 0; transition: opacity 900ms ease; will-change: transform; }
+.space-intro.is-arriving .space-intro-destination { opacity: 1; }
+.space-intro.is-school .space-intro-destination { opacity: 0; }
+.space-intro-pin { position: absolute; width: 10px; height: 10px; border: 2px solid white; border-radius: 50%; background: #9dc9ff; box-shadow: 0 0 0 8px rgba(255, 255, 255, .14), 0 2px 12px #081426; transform: translate(-50%, -50%); }
+.space-intro-pin-label { position: absolute; left: 22px; top: -16px; padding: 9px 13px; width: max-content; background: rgba(3, 10, 17, .7); border-left: 1px solid rgba(255, 255, 255, .5); font-size: 11px; letter-spacing: .12em; }
+@media (max-width: 600px) {
+  .space-intro-controls { top: max(22px, env(safe-area-inset-top)); gap: 8px; }
+  .space-intro-controls button { height: 40px; }
+  .space-intro-pause { width: 40px; }
+  .space-intro-skip { padding: 0 15px; gap: 10px; }
+  .space-intro-school img { object-fit: contain; object-position: center; }
+  .space-intro-school-caption { bottom: 104px; }
+  .space-intro-school-caption h2 { font-size: 30px; }
+  .space-intro-school-caption p { font-size: 11px; }
+  .space-intro-credits { bottom: max(18px, env(safe-area-inset-bottom)); font-size: 8px; }
+  .space-intro-progress { bottom: 66px; }
+  .space-intro-pin-label { top: 25px; left: 0; transform: translateX(-50%); border-left: none; border-top: 1px solid rgba(255, 255, 255, .5); }
+}
+@media (prefers-reduced-motion: reduce) { .space-intro { display: none !important; } }

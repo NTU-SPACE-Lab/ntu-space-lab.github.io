@@ -65,7 +65,7 @@
             "url": "https://ntu-space-lab.github.io/",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://ntu-space-lab.github.io/assets/brand/v8/space-logo-v8-approved.png"
+              "url": "https://ntu-space-lab.github.io/assets/brand/space-logo-robotic-arm.png"
             },
             "description": "SPACE Lab at NTU EEE advances spatial computing, embodied intelligence, world models, and spatial and physical intelligence.",
             "parentOrganization": {
@@ -82,26 +82,30 @@
         ]
       }
     </script>
-    <link rel="icon" href="assets/brand/v8/favicon-v10-32.png" sizes="32x32" type="image/png" />
-    <link rel="icon" href="assets/brand/v8/favicon-v10-64.png" sizes="64x64" type="image/png" />
-    <link rel="apple-touch-icon" href="assets/brand/v8/apple-touch-icon-v10.png" />
+    <link rel="icon" href="assets/brand/space-globe-hand-icon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/brand/space-globe-hand-icon.png" />
     <script>
       (() => {
-        const introKey = "space-lab:intro:v1";
+        const introKey = "space-lab:intro:eee-v3";
         const root = document.documentElement;
-        let shouldPlay = false;
+        const mode = new URLSearchParams(window.location.search).get("intro");
+        const motionAllowed = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        let shouldPlay = motionAllowed && mode !== "off";
 
         try {
-          shouldPlay =
-            !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
-            !window.sessionStorage.getItem(introKey);
+          shouldPlay = shouldPlay && (mode === "replay" || !window.sessionStorage.getItem(introKey));
           if (shouldPlay) window.sessionStorage.setItem(introKey, "seen");
         } catch {
-          shouldPlay = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          // Private browsing may disable session storage; the intro remains skippable.
         }
 
-        if (shouldPlay) root.classList.add("space-intro-pending");
-        window.setTimeout(() => root.classList.remove("space-intro-pending"), 4200);
+        if (shouldPlay) {
+          root.classList.add("space-intro-pending");
+          // Fail open even if the entry script never loads.
+          window.spaceIntroWatchdog = window.setTimeout(() => {
+            root.classList.remove("space-intro-pending");
+          }, 20000);
+        }
       })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -111,29 +115,34 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="space-intro.css" />
     <script src="script.js" defer></script>
   </head>
   <body data-page="home">
-    <div class="space-intro" data-space-intro>
-      <div class="space-intro-grid"></div>
-      <svg class="space-intro-orbits" viewBox="0 0 1200 720" aria-hidden="true">
-        <ellipse class="space-intro-orbit space-intro-orbit-a" cx="600" cy="360" rx="420" ry="128" />
-        <ellipse class="space-intro-orbit space-intro-orbit-b" cx="600" cy="360" rx="330" ry="245" />
-        <path class="space-intro-axis" d="M126 360H1074M600 78V642" />
-      </svg>
-      <div class="space-intro-scan"></div>
-      <div class="space-intro-core">
-        <div class="space-intro-logo-stage">
-          <img
-            src="assets/brand/v8/space-logo-v8-approved.png"
-            alt="SPACE Lab"
-            width="1929"
-            height="344"
-          />
-        </div>
-        <span class="space-intro-caption">Perception · Prediction · Action</span>
+    <div class="space-intro" data-space-intro role="dialog" aria-modal="true" aria-label="From Earth to NTU Electrical and Electronic Engineering">
+      <div class="space-intro-scene" data-intro-scene aria-hidden="true"></div>
+      <div class="space-intro-school" data-intro-school aria-hidden="true">
+        <img data-intro-school-image alt="NTU School of Electrical and Electronic Engineering, S2 building" decoding="async" />
       </div>
-      <button class="space-intro-hint" type="button">Click anywhere to enter</button>
+      <div class="space-intro-shade" aria-hidden="true"></div>
+      <div class="space-intro-controls">
+        <button class="space-intro-pause" data-intro-pause type="button" aria-label="Pause intro" disabled>
+          <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M5 3v10M11 3v10" /></svg>
+        </button>
+        <button class="space-intro-skip" data-intro-skip type="button">Skip <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="space-intro-destination" data-intro-marker aria-hidden="true">
+        <span class="space-intro-pin"></span>
+        <span class="space-intro-pin-label">NTU · EEE</span>
+      </div>
+      <div class="space-intro-school-caption" data-intro-caption aria-hidden="true">
+        <h2>NTU · EEE</h2>
+        <p>Electrical &amp; Electronic Engineering</p>
+      </div>
+      <div class="space-intro-progress" aria-hidden="true"><span data-intro-progress></span></div>
+      <div class="space-intro-credits" data-intro-credits></div>
+      <a class="space-intro-photo-credit" href="https://www.ntu.edu.sg/eee/giving" target="_blank" rel="noreferrer">Photo: NTU EEE</a>
+      <span class="space-intro-status" data-intro-status role="status">Loading Earth imagery</span>
     </div>
 
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -146,10 +155,11 @@
         aria-label="SPACE Lab — Spatial Computing and Embodied Intelligence Lab home"
       >
         <img
-          src="assets/brand/v8/space-logo-v8-approved.png"
+          class="space-wordmark"
+          src="assets/brand/space-logo-robotic-arm.png"
           alt="SPACE Lab"
-          width="1929"
-          height="344"
+          width="2172"
+          height="724"
         />
       </a>
 
@@ -253,14 +263,22 @@
         </div>
 
         <figure class="hero-visual" data-hero-visual data-reveal>
-          <img
-            src="assets/images/hero-world.png"
-            alt="A luminous spatial model containing robots, a human point cloud, and physical trajectories"
-            width="1456"
-            height="1088"
-            fetchpriority="high"
-          />
+          <div class="hero-artwork">
+            <img
+              data-hero-poster
+              src="assets/images/hero-world.png"
+              alt="A luminous spatial model containing robots, a human point cloud, and physical trajectories"
+              width="1448"
+              height="1086"
+              fetchpriority="high"
+            />
+            <div class="hero-scene" data-hero-scene aria-hidden="true"></div>
+          </div>
           <figcaption>Perception · Prediction · Action</figcaption>
+          <button class="hero-motion" data-hero-motion type="button" aria-label="Pause animation" aria-pressed="false" hidden>
+            <svg class="hero-motion-pause" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10M13 5v10" /></svg>
+            <svg class="hero-motion-play" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 5 8 5-8 5Z" /></svg>
+          </button>
         </figure>
 
         <a class="scroll-cue" href="#about" aria-label="Scroll to discover">
@@ -390,10 +408,11 @@
       <div class="footer-brand">
         <a href="index.html" aria-label="SPACE Lab home">
           <img
-            src="assets/brand/v8/space-logo-v8-approved.png"
+            class="space-wordmark"
+          src="assets/brand/space-logo-robotic-arm.png"
             alt="SPACE Lab"
-            width="1929"
-            height="344"
+            width="2172"
+            height="724"
           />
         </a>
         <p class="footer-lab-name">Spatial Computing and Embodied Intelligence Lab</p>

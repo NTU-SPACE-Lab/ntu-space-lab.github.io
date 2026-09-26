@@ -10,41 +10,18 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const spaceIntro = document.querySelector("[data-space-intro]");
 
 if (spaceIntro) {
-  const shouldPlayIntro = root.classList.contains("space-intro-pending");
-
-  if (!shouldPlayIntro || reduceMotion.matches) {
+  if (!root.classList.contains("space-intro-pending") || reduceMotion.matches) {
     root.classList.remove("space-intro-pending");
     spaceIntro.remove();
   } else {
-    body.classList.add("space-intro-playing");
-
-    let introComplete = false;
-    const handleIntroKeydown = (event) => {
-      if (event.key === "Escape") skipIntro();
-    };
-    const completeIntro = () => {
-      if (introComplete) return;
-      introComplete = true;
-      document.removeEventListener("keydown", handleIntroKeydown);
-      root.classList.remove("space-intro-pending");
-      body.classList.remove("space-intro-playing");
-      spaceIntro.remove();
-    };
-
-    const skipIntro = () => {
-      if (introComplete || spaceIntro.classList.contains("is-skipping")) return;
-      spaceIntro.classList.add("is-skipping");
-    };
-
-    window.requestAnimationFrame(() => spaceIntro.classList.add("is-active"));
-    spaceIntro.addEventListener("click", skipIntro);
-    document.addEventListener("keydown", handleIntroKeydown);
-    spaceIntro.addEventListener("animationend", (event) => {
-      if (event.target === spaceIntro && event.animationName === "space-intro-exit") {
-        completeIntro();
-      }
-    });
-    window.setTimeout(completeIntro, 4100);
+    import("./space-intro.js")
+      .then(({ playSpaceIntro }) => playSpaceIntro(spaceIntro))
+      .catch(() => {
+        window.clearTimeout(window.spaceIntroWatchdog);
+        root.classList.remove("space-intro-pending");
+        body.classList.remove("space-intro-playing");
+        spaceIntro.remove();
+      });
   }
 }
 
@@ -122,6 +99,7 @@ document.querySelectorAll("[data-page-link]").forEach((link) => {
 
 if (hero && heroVisual && !reduceMotion.matches && matchMedia("(pointer: fine)").matches) {
   hero.addEventListener("pointermove", (event) => {
+    if (reduceMotion.matches || heroVisual.classList.contains("is-motion-paused")) return;
     const bounds = hero.getBoundingClientRect();
     const x = (event.clientX - bounds.left) / bounds.width - 0.5;
     const y = (event.clientY - bounds.top) / bounds.height - 0.5;
@@ -130,6 +108,32 @@ if (hero && heroVisual && !reduceMotion.matches && matchMedia("(pointer: fine)")
   });
 
   hero.addEventListener("pointerleave", () => {
+    heroVisual.style.setProperty("--hero-x", "0px");
+    heroVisual.style.setProperty("--hero-y", "0px");
+  });
+}
+
+if (heroVisual) {
+  // Start the original artwork's signals only after the Earth intro has finished.
+  let worldRequested = false;
+  const startHeroWorld = () => {
+    if (worldRequested || root.classList.contains("space-intro-pending") || body.classList.contains("space-intro-playing")) return;
+    worldRequested = true;
+    introStateObserver.disconnect();
+    import("./hero-world.js")
+      .then(({ mountHeroWorld }) => mountHeroWorld(heroVisual))
+      .catch(() => {
+        heroVisual.classList.remove("is-live");
+        const control = heroVisual.querySelector("[data-hero-motion]");
+        if (control) control.hidden = true;
+      });
+  };
+  const introStateObserver = new MutationObserver(startHeroWorld);
+  introStateObserver.observe(root, { attributes: true, attributeFilter: ["class"] });
+  introStateObserver.observe(body, { attributes: true, attributeFilter: ["class"] });
+  startHeroWorld();
+  reduceMotion.addEventListener("change", () => {
+    if (!reduceMotion.matches) return;
     heroVisual.style.setProperty("--hero-x", "0px");
     heroVisual.style.setProperty("--hero-y", "0px");
   });
