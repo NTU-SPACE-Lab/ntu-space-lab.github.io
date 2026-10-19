@@ -1,0 +1,181 @@
+{
+  "description": "Official paper and project figures resized for the SPACE Lab publication list. Figure copyrights remain with their respective authors.",
+  "images": [
+    {
+      "id": "robofoundry",
+      "source": "https://arxiv.org/html/2609.32862v1/robo_teaser.png",
+      "page": "https://arxiv.org/abs/2609.32862",
+      "alt": "RoboFoundry system evolution across simulated tasks and physical robots",
+      "file": "assets/images/publications/robofoundry.webp",
+      "width": 960,
+      "height": 373,
+      "bytes": 50246,
+      "original_dimensions": [
+        2858,
+        1110
+      ],
+      "original_bytes": 1445651,
+      "resolved_source": "https://arxiv.org/html/2609.32862v1/robo_teaser.png"
+    },
+    {
+      "id": "robo-tag",
+      "source": "https://arxiv.org/html/2511.07717v2/pipe.png",
+      "page": "https://arxiv.org/abs/2511.07717",
+      "alt": "RoboTAG framework aligning 2D visual features and 3D robot representations",
+      "file": "assets/images/publications/robo-tag.webp",
+      "width": 960,
+      "height": 479,
+      "bytes": 41912,
+      "original_dimensions": [
+        2028,
+        1011
+      ],
+      "original_bytes": 339680,
+      "resolved_source": "https://arxiv.org/html/2511.07717v2/pipe.png"
+    },
+    {
+      "id": "4d-langsplat",
+      "source": "https://4d-langsplat.github.io/static/images/teaser.png",
+      "page": "https://4d-langsplat.github.io/",
+      "alt": "4D LangSplat language features tracking semantic changes in dynamic scenes",
+      "file": "assets/images/publications/4d-langsplat.webp",
+      "width": 960,
+      "height": 561,
+      "bytes": 109172,
+      "original_dimensions": [
+        2138,
+        1250
+      ],
+      "original_bytes": 4021533,
+      "resolved_source": "https://4d-langsplat.github.io/static/images/teaser.png"
+    },
+    {
+      "id": "reparo",
+      "source": "https://reparo2024.github.io/static/images/framework-1.png",
+      "page": "https://reparo2024.github.io/",
+      "alt": "REPARO reconstructing and aligning individual 3D objects from a single image",
+      "file": "assets/images/publications/reparo.webp",
+      "width": 960,
+      "height": 607,
+      "bytes": 49518,
+      "original_dimensions": [
+        1634,
+        1033
+      ],
+      "original_bytes": 297048,
+      "resolved_source": "https://reparo2024.github.io/static/images/framework-1.png"
+    },
+    {
+      "id": "langsplat-v2",
+      "source": "https://langsplat-v2.github.io/static/images/loc_paper.png",
+      "page": "https://langsplat-v2.github.io/",
+      "alt": "Open-vocabulary 3D object localization with LangSplatV2",
+      "file": "assets/images/publications/langsplat-v2.webp",
+      "width": 960,
+      "height": 322,
+      "bytes": 40448,
+      "original_dimensions": [
+        5093,
+        1706
+      ],
+      "original_bytes": 5747767,
+      "resolved_source": "https://langsplat-v2.github.io/static/images/loc_paper.png"
+    },
+    {
+      "id": "momentum-gs",
+      "source": "https://jixuan-fan.github.io/Momentum-GS_Page/static/images/pipeline_final.png",
+      "page": "https://jixuan-fan.github.io/Momentum-GS_Page/",
+      "alt": "Momentum-GS pipeline for consistent large-scale 3D scene reconstruction",
+      "file": "assets/images/publications/momentum-gs.webp",
+      "width": 960,
+      "height": 392,
+      "bytes": 54674,
+      "original_dimensions": [
+        4130,
+        1688
+      ],
+      "original_bytes": 3280869,
+      "resolved_source": "https://jixuan-fan.github.io/Momentum-GS_Page/static/images/pipeline_final.png"
+    },
+    {
+      "id": "langsplat",
+      "source": "https://langsplat.github.io/static/images/localization.png",
+      "page": "https://langsplat.github.io/",
+      "alt": "Language-guided object localization in 3D scenes with LangSplat",
+      "file": "assets/images/publications/langsplat.webp",
+      "width": 718,
+      "height": 640,
+      "bytes": 66990,
+      "original_dimensions": [
+        2621,
+        2337
+      ],
+      "original_bytes": 4115912,
+      "resolved_source": "https://langsplat.github.io/static/images/localization.png"
+    },
+    {
+      "id": "auto-rubric",
+      "source": "https://raw.githubusercontent.com/OpenEnvision/AutoRubric-as-Reward/main/assets/site/figures/methods.png",
+      "page": "https://openenvision.org/AutoRubric-as-Reward/",
+      "alt": "Auto-Rubric pipeline converting preferences into explicit generative criteria",
+      "file": "assets/images/publications/auto-rubric.webp",
+      "width": 960,
+      "height": 552,
+      "bytes": 75634,
+      "original_dimensions": [
+        1147,
+        660
+      ],
+      "original_bytes": 356242,
+      "resolved_source": "https://raw.githubusercontent.com/OpenEnvision/AutoRubric-as-Reward/main/assets/site/figures/methods.png"
+    },
+    {
+      "id": "social-gpt",
+      "source": "https://mengzibin.github.io/SocialGPT.github.io/figure-1.png",
+      "page": "https://mengzibin.github.io/SocialGPT.github.io/",
+      "alt": "SocialGPT framework for visual perception and social relation reasoning",
+      "file": "assets/images/publications/social-gpt.webp",
+      "width": 960,
+      "height": 212,
+      "bytes": 38272,
+      "original_dimensions": [
+        1971,
+        435
+      ],
+      "original_bytes": 637116,
+      "resolved_source": "https://mengzibin.github.io/SocialGPT.github.io/figure-1.png"
+    },
+    {
+      "id": "clip-trans",
+      "source": "https://devaansh100.github.io/projects/cliptrans/static/images/teaser.jpg",
+      "page": "https://devaansh100.github.io/projects/cliptrans/",
+      "alt": "CLIPTrans visual knowledge transfer for multimodal machine translation",
+      "file": "assets/images/publications/clip-trans.webp",
+      "width": 848,
+      "height": 470,
+      "bytes": 35814,
+      "original_dimensions": [
+        848,
+        470
+      ],
+      "original_bytes": 66479,
+      "resolved_source": "https://devaansh100.github.io/projects/cliptrans/static/images/teaser.jpg"
+    },
+    {
+      "id": "ordinal-clip",
+      "source": "https://xk-huang.github.io/OrdinalCLIP/images/teaser.png",
+      "page": "https://xk-huang.github.io/OrdinalCLIP/",
+      "alt": "OrdinalCLIP language-guided ordinal regression overview",
+      "file": "assets/images/publications/ordinal-clip.webp",
+      "width": 960,
+      "height": 151,
+      "bytes": 16808,
+      "original_dimensions": [
+        1280,
+        201
+      ],
+      "original_bytes": 56131,
+      "resolved_source": "https://xk-huang.github.io/OrdinalCLIP/images/teaser.png"
+    }
+  ]
+}

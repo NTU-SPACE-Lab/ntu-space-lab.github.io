@@ -46,6 +46,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
+    <script src="publications.js" defer></script>
   </head>
   <body data-page="publications">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -124,230 +125,256 @@
         <header class="publications-heading" data-reveal>
           <h1 id="publications-title">Publications</h1>
         </header>
-        <nav class="publication-domain-nav" aria-label="Publication domains" data-reveal>
-          <a href="#embodied-intelligence">
-            <span class="publication-domain-number">01</span>
-            <strong>Embodied Intelligence</strong>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5" /></svg>
-          </a>
-          <a href="#world-models">
-            <span class="publication-domain-number">02</span>
-            <strong>World Models</strong>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5" /></svg>
-          </a>
-          <a href="#spatial-intelligence">
-            <span class="publication-domain-number">03</span>
-            <strong>Spatial Intelligence</strong>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5" /></svg>
-          </a>
-          <a href="#multimodal-intelligence">
-            <span class="publication-domain-number">04</span>
-            <strong>Multimodal Intelligence</strong>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5" /></svg>
-          </a>
-        </nav>
-
-        <section class="publication-domain" id="embodied-intelligence" aria-labelledby="embodied-intelligence-title">
-          <header class="publication-domain-heading" data-reveal>
-            <h2 id="embodied-intelligence-title">Embodied Intelligence</h2>
-            <p>Robot perception and embodied agents that learn through interaction.</p>
-          </header>
-          <div class="publication-list">
-            <article class="publication-item" data-reveal>
+        <div class="publication-toolbar" data-reveal>
+          <div class="publication-filters" role="group" aria-label="Filter publications by research topic" hidden>
+            <button class="publication-filter" type="button" data-publication-filter="all" aria-pressed="true" aria-controls="publication-list">All</button>
+            <button class="publication-filter" type="button" data-publication-filter="embodied-intelligence" aria-pressed="false" aria-controls="publication-list">Embodied Intelligence</button>
+            <button class="publication-filter" type="button" data-publication-filter="world-models" aria-pressed="false" aria-controls="publication-list">World Models</button>
+            <button class="publication-filter" type="button" data-publication-filter="spatial-intelligence" aria-pressed="false" aria-controls="publication-list">Spatial Intelligence</button>
+            <button class="publication-filter" type="button" data-publication-filter="multimodal-intelligence" aria-pressed="false" aria-controls="publication-list">Multimodal Intelligence</button>
+          </div>
+          <p class="publication-count" role="status" aria-live="polite" aria-atomic="true">11 publications</p>
+        </div>
+        <div class="publication-list" id="publication-list">
+          <article class="publication-item" id="publication-robofoundry" data-publication-year="2026" data-domains="embodied-intelligence multimodal-intelligence">
+            <a class="publication-visual" href="https://jingsongliang.com/robofoundry/" target="_blank" rel="noopener noreferrer" aria-label="View RoboFoundry project">
+              <img src="assets/images/publications/robofoundry.webp" alt="RoboFoundry system evolution across simulated tasks and physical robots" width="960" height="373" loading="eager" decoding="async" />
+            </a>
+            <div class="publication-copy">
               <div class="publication-meta">
                 <span class="publication-venue">arXiv · 2026</span>
                 <span class="publication-distinction">Preprint</span>
               </div>
-              <div class="publication-copy">
-                <h3><a href="https://arxiv.org/abs/2609.32862" target="_blank" rel="noopener noreferrer">RoboFoundry: System-as-Policy Evolution for Self-Learning Embodied Agents</a></h3>
-                <p class="publication-authors">Jingsong Liang, Shuhao Liao, Shizhe Zhang, Diyuan Hou, Yuxin Cai, Xinjian Deng, Chengyang He, Wenhui Huang, Runjia Tan, Zhidong Wang, Lan Yu, Xuesong Tian, Guillaume Sartoretti, Jie Luo, Yao Mu, Wenjun Wu, Wanhua Li, Chen Lv</p>
-                <p class="publication-summary">An embodied agent framework that learns from execution experience to improve its context, memory, and hierarchical skills across heterogeneous robots.</p>
-                <nav class="publication-links" aria-label="Resources for RoboFoundry: System-as-Policy Evolution for Self-Learning Embodied Agents">
-                  <a href="https://arxiv.org/abs/2609.32862" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
-                  <a href="https://jingsongliang.com/robofoundry/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
-                  <a href="https://github.com/robofoundry2026/RoboFoundry" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
-                </nav>
+              <h2><a href="https://arxiv.org/abs/2609.32862" target="_blank" rel="noopener noreferrer">RoboFoundry: System-as-Policy Evolution for Self-Learning Embodied Agents</a></h2>
+              <p class="publication-authors">Jingsong Liang, Shuhao Liao, Shizhe Zhang, Diyuan Hou, Yuxin Cai, Xinjian Deng, Chengyang He, Wenhui Huang, Runjia Tan, Zhidong Wang, Lan Yu, Xuesong Tian, Guillaume Sartoretti, Jie Luo, Yao Mu, Wenjun Wu, Wanhua Li, Chen Lv</p>
+              <p class="publication-summary">An embodied agent framework that learns from execution experience to improve its context, memory, and hierarchical skills across heterogeneous robots.</p>
+              <ul class="publication-labels" aria-label="Research topics">
+                <li class="publication-label">Embodied Intelligence</li>
+                <li class="publication-label">Multimodal Intelligence</li>
+              </ul>
+              <nav class="publication-links" aria-label="Resources for RoboFoundry: System-as-Policy Evolution for Self-Learning Embodied Agents">
+                <a href="https://arxiv.org/abs/2609.32862" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
+                <a href="https://jingsongliang.com/robofoundry/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/robofoundry2026/RoboFoundry" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
+              </nav>
+            </div>
+          </article>
+          <article class="publication-item" id="publication-auto-rubric" data-publication-year="2026" data-domains="multimodal-intelligence">
+            <a class="publication-visual" href="https://openenvision.github.io/AutoRubric-as-Reward/" target="_blank" rel="noopener noreferrer" aria-label="View Auto-Rubric as Reward project">
+              <img src="assets/images/publications/auto-rubric.webp" alt="Auto-Rubric pipeline converting preferences into explicit generative criteria" width="960" height="552" loading="eager" decoding="async" />
+            </a>
+            <div class="publication-copy">
+              <div class="publication-meta">
+                <span class="publication-venue">NeurIPS · 2026</span>
               </div>
-            </article>
-            <article class="publication-item" data-reveal>
+              <h2><a href="https://arxiv.org/abs/2605.08354" target="_blank" rel="noopener noreferrer">Auto-Rubric as Reward: From Implicit Preferences to Explicit Multimodal Generative Criteria</a></h2>
+              <p class="publication-authors">Juanxi Tian, Fengyuan Liu, Jiaming Han, Yilei Jiang, Yongliang Wu, Yesheng Liu, Haodong Li, Furong Xu, Wanhua Li</p>
+              <p class="publication-summary">Multimodal preferences are converted into explicit, verifiable rubrics, then used with Rubric Policy Optimization to align text-to-image generation and image editing with human judgments.</p>
+              <ul class="publication-labels" aria-label="Research topics">
+                <li class="publication-label">Multimodal Intelligence</li>
+              </ul>
+              <nav class="publication-links" aria-label="Resources for Auto-Rubric as Reward: From Implicit Preferences to Explicit Multimodal Generative Criteria">
+                <a href="https://arxiv.org/abs/2605.08354" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
+                <a href="https://openenvision.github.io/AutoRubric-as-Reward/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/OpenEnvision/AutoRubric-as-Reward" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
+              </nav>
+            </div>
+          </article>
+          <article class="publication-item" id="publication-robo-tag" data-publication-year="2026" data-domains="embodied-intelligence spatial-intelligence">
+            <a class="publication-visual" href="https://arxiv.org/abs/2511.07717" target="_blank" rel="noopener noreferrer" aria-label="View RoboTAG paper">
+              <img src="assets/images/publications/robo-tag.webp" alt="RoboTAG framework aligning 2D visual features and 3D robot representations" width="960" height="479" loading="lazy" decoding="async" />
+            </a>
+            <div class="publication-copy">
               <div class="publication-meta">
                 <span class="publication-venue">CVPR · 2026</span>
               </div>
-              <div class="publication-copy">
-                <h3><a href="https://arxiv.org/abs/2511.07717" target="_blank" rel="noopener noreferrer">RoboTAG: End-to-end Robot Pose Estimation via Topological Alignment Graph</a></h3>
-                <p class="publication-authors">Yifan Liu, Fangneng Zhan, Wanhua Li, Haowen Sun, Katerina Fragkiadaki, Hanspeter Pfister</p>
-                <p class="publication-summary">A topological alignment graph connects 2D observations with 3D priors to estimate robot configurations from monocular RGB images with reduced annotation requirements.</p>
-                <nav class="publication-links" aria-label="Resources for RoboTAG: End-to-end Robot Pose Estimation via Topological Alignment Graph">
-                  <a href="https://arxiv.org/abs/2511.07717" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
-                </nav>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="publication-domain" id="world-models" aria-labelledby="world-models-title">
-          <header class="publication-domain-heading" data-reveal>
-            <h2 id="world-models-title">World Models</h2>
-            <p>Dynamic scene representations and compositional 3D generation.</p>
-            <p class="publication-domain-note"><strong>Related foundations.</strong> Selected work on representing and generating scenes that provides foundations for world modeling.</p>
-          </header>
-          <div class="publication-list">
-            <article class="publication-item" data-reveal>
-              <div class="publication-meta">
-                <span class="publication-venue">CVPR · 2025</span>
-              </div>
-              <div class="publication-copy">
-                <h3><a href="https://openaccess.thecvf.com/content/CVPR2025/html/Li_4D_LangSplat_4D_Language_Gaussian_Splatting_via_Multimodal_Large_Language_CVPR_2025_paper.html" target="_blank" rel="noopener noreferrer">4D LangSplat: 4D Language Gaussian Splatting via Multimodal Large Language Models</a></h3>
-                <p class="publication-authors">Wanhua Li, Renping Zhou, Jiawei Zhou, Yingwei Song, Johannes Herter, Minghan Qin, Gao Huang, Hanspeter Pfister</p>
-                <p class="publication-summary">Language-aware 4D scene representations learned from object-wise video captions support time-sensitive, open-vocabulary queries in dynamic scenes.</p>
-                <nav class="publication-links" aria-label="Resources for 4D LangSplat: 4D Language Gaussian Splatting via Multimodal Large Language Models">
-                  <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Li_4D_LangSplat_4D_Language_Gaussian_Splatting_via_Multimodal_Large_Language_CVPR_2025_paper.html" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
-                  <a href="https://4d-langsplat.github.io/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
-                  <a href="https://github.com/zrporz/4DLangSplat" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
-                </nav>
-              </div>
-            </article>
-            <article class="publication-item" data-reveal>
-              <div class="publication-meta">
-                <span class="publication-venue">ICCV · 2025</span>
-              </div>
-              <div class="publication-copy">
-                <h3><a href="https://arxiv.org/abs/2405.18525" target="_blank" rel="noopener noreferrer">REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment</a></h3>
-                <p class="publication-authors">Haonan Han, Rui Yang, Huan Liao, Jiankai Xing, Zunnan Xu, Xiaoming Yu, Junwei Zha, Xiu Li, Wanhua Li</p>
-                <p class="publication-summary">Separate 3D objects are generated from a single image, then aligned through differentiable rendering to build a coherent scene composition.</p>
-                <nav class="publication-links" aria-label="Resources for REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment">
-                  <a href="https://arxiv.org/abs/2405.18525" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
-                  <a href="https://reparo2024.github.io/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
-                  <a href="https://github.com/VincentHancoder/REPARO" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
-                </nav>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="publication-domain" id="spatial-intelligence" aria-labelledby="spatial-intelligence-title">
-          <header class="publication-domain-heading" data-reveal>
-            <h2 id="spatial-intelligence-title">Spatial Intelligence</h2>
-            <p>Language-grounded 3D understanding and large-scale scene reconstruction.</p>
-          </header>
-          <div class="publication-list">
-            <article class="publication-item" data-reveal>
+              <h2><a href="https://arxiv.org/abs/2511.07717" target="_blank" rel="noopener noreferrer">RoboTAG: End-to-end Robot Pose Estimation via Topological Alignment Graph</a></h2>
+              <p class="publication-authors">Yifan Liu, Fangneng Zhan, Wanhua Li, Haowen Sun, Katerina Fragkiadaki, Hanspeter Pfister</p>
+              <p class="publication-summary">A topological alignment graph connects 2D observations with 3D priors to estimate robot configurations from monocular RGB images with reduced annotation requirements.</p>
+              <ul class="publication-labels" aria-label="Research topics">
+                <li class="publication-label">Embodied Intelligence</li>
+                <li class="publication-label">Spatial Intelligence</li>
+              </ul>
+              <nav class="publication-links" aria-label="Resources for RoboTAG: End-to-end Robot Pose Estimation via Topological Alignment Graph">
+                <a href="https://arxiv.org/abs/2511.07717" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
+              </nav>
+            </div>
+          </article>
+          <article class="publication-item" id="publication-langsplat-v2" data-publication-year="2025" data-domains="spatial-intelligence multimodal-intelligence">
+            <a class="publication-visual" href="https://langsplat-v2.github.io/" target="_blank" rel="noopener noreferrer" aria-label="View LangSplatV2 project">
+              <img src="assets/images/publications/langsplat-v2.webp" alt="Open-vocabulary 3D object localization with LangSplatV2" width="960" height="322" loading="lazy" decoding="async" />
+            </a>
+            <div class="publication-copy">
               <div class="publication-meta">
                 <span class="publication-venue">NeurIPS · 2025</span>
               </div>
-              <div class="publication-copy">
-                <h3><a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/feb14cd8a37e800f38edba497e847363-Abstract-Conference.html" target="_blank" rel="noopener noreferrer">LangSplatV2: High-dimensional 3D Language Gaussian Splatting with 450+ FPS</a></h3>
-                <p class="publication-authors">Wanhua Li, Yujie Zhao, Minghan Qin, Yang Liu, Yuanhao Cai, Chuang Gan, Hanspeter Pfister</p>
-                <p class="publication-summary">Sparse coefficient fields accelerate high-dimensional language feature rendering and open-vocabulary querying in 3D scenes.</p>
-                <nav class="publication-links" aria-label="Resources for LangSplatV2: High-dimensional 3D Language Gaussian Splatting with 450+ FPS">
-                  <a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/feb14cd8a37e800f38edba497e847363-Abstract-Conference.html" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
-                  <a href="https://langsplat-v2.github.io/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
-                  <a href="https://github.com/ZhaoYujie2002/LangSplatV2" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
-                </nav>
-              </div>
-            </article>
-            <article class="publication-item" data-reveal>
+              <h2><a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/feb14cd8a37e800f38edba497e847363-Abstract-Conference.html" target="_blank" rel="noopener noreferrer">LangSplatV2: High-dimensional 3D Language Gaussian Splatting with 450+ FPS</a></h2>
+              <p class="publication-authors">Wanhua Li, Yujie Zhao, Minghan Qin, Yang Liu, Yuanhao Cai, Chuang Gan, Hanspeter Pfister</p>
+              <p class="publication-summary">Sparse coefficient fields accelerate high-dimensional language feature rendering and open-vocabulary querying in 3D scenes.</p>
+              <ul class="publication-labels" aria-label="Research topics">
+                <li class="publication-label">Spatial Intelligence</li>
+                <li class="publication-label">Multimodal Intelligence</li>
+              </ul>
+              <nav class="publication-links" aria-label="Resources for LangSplatV2: High-dimensional 3D Language Gaussian Splatting with 450+ FPS">
+                <a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/feb14cd8a37e800f38edba497e847363-Abstract-Conference.html" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
+                <a href="https://langsplat-v2.github.io/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/ZhaoYujie2002/LangSplatV2" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
+              </nav>
+            </div>
+          </article>
+          <article class="publication-item" id="publication-momentum-gs" data-publication-year="2025" data-domains="spatial-intelligence">
+            <a class="publication-visual" href="https://jixuan-fan.github.io/Momentum-GS_Page/" target="_blank" rel="noopener noreferrer" aria-label="View Momentum-GS project">
+              <img src="assets/images/publications/momentum-gs.webp" alt="Momentum-GS pipeline for consistent large-scale 3D scene reconstruction" width="960" height="392" loading="lazy" decoding="async" />
+            </a>
+            <div class="publication-copy">
               <div class="publication-meta">
                 <span class="publication-venue">ICCV · 2025</span>
               </div>
-              <div class="publication-copy">
-                <h3><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Fan_Momentum-GS_Momentum_Gaussian_Self-Distillation_for_High-Quality_Large_Scene_Reconstruction_ICCV_2025_paper.html" target="_blank" rel="noopener noreferrer">Momentum-GS: Momentum Gaussian Self-Distillation for High-Quality Large Scene Reconstruction</a></h3>
-                <p class="publication-authors">Jixuan Fan, Wanhua Li, Yifei Han, Tianru Dai, Yansong Tang</p>
-                <p class="publication-summary">Momentum-based self-distillation improves consistency across independently trained blocks for large-scale 3D scene reconstruction.</p>
-                <nav class="publication-links" aria-label="Resources for Momentum-GS: Momentum Gaussian Self-Distillation for High-Quality Large Scene Reconstruction">
-                  <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Fan_Momentum-GS_Momentum_Gaussian_Self-Distillation_for_High-Quality_Large_Scene_Reconstruction_ICCV_2025_paper.html" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
-                  <a href="https://jixuan-fan.github.io/Momentum-GS_Page/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
-                  <a href="https://github.com/Jixuan-Fan/Momentum-GS" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
-                </nav>
+              <h2><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Fan_Momentum-GS_Momentum_Gaussian_Self-Distillation_for_High-Quality_Large_Scene_Reconstruction_ICCV_2025_paper.html" target="_blank" rel="noopener noreferrer">Momentum-GS: Momentum Gaussian Self-Distillation for High-Quality Large Scene Reconstruction</a></h2>
+              <p class="publication-authors">Jixuan Fan, Wanhua Li, Yifei Han, Tianru Dai, Yansong Tang</p>
+              <p class="publication-summary">Momentum-based self-distillation improves consistency across independently trained blocks for large-scale 3D scene reconstruction.</p>
+              <ul class="publication-labels" aria-label="Research topics">
+                <li class="publication-label">Spatial Intelligence</li>
+              </ul>
+              <nav class="publication-links" aria-label="Resources for Momentum-GS: Momentum Gaussian Self-Distillation for High-Quality Large Scene Reconstruction">
+                <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Fan_Momentum-GS_Momentum_Gaussian_Self-Distillation_for_High-Quality_Large_Scene_Reconstruction_ICCV_2025_paper.html" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
+                <a href="https://jixuan-fan.github.io/Momentum-GS_Page/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/Jixuan-Fan/Momentum-GS" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
+              </nav>
+            </div>
+          </article>
+          <article class="publication-item" id="publication-reparo" data-publication-year="2025" data-domains="spatial-intelligence world-models">
+            <a class="publication-visual" href="https://reparo2024.github.io/" target="_blank" rel="noopener noreferrer" aria-label="View REPARO project">
+              <img src="assets/images/publications/reparo.webp" alt="REPARO reconstructing and aligning individual 3D objects from a single image" width="960" height="607" loading="lazy" decoding="async" />
+            </a>
+            <div class="publication-copy">
+              <div class="publication-meta">
+                <span class="publication-venue">ICCV · 2025</span>
               </div>
-            </article>
-            <article class="publication-item" data-reveal>
+              <h2><a href="https://arxiv.org/abs/2405.18525" target="_blank" rel="noopener noreferrer">REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment</a></h2>
+              <p class="publication-authors">Haonan Han, Rui Yang, Huan Liao, Jiankai Xing, Zunnan Xu, Xiaoming Yu, Junwei Zha, Xiu Li, Wanhua Li</p>
+              <p class="publication-summary">Separate 3D objects are generated from a single image, then aligned through differentiable rendering to build a coherent scene composition.</p>
+              <ul class="publication-labels" aria-label="Research topics">
+                <li class="publication-label">Spatial Intelligence</li>
+                <li class="publication-label">World Models · Foundations</li>
+              </ul>
+              <nav class="publication-links" aria-label="Resources for REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment">
+                <a href="https://arxiv.org/abs/2405.18525" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
+                <a href="https://reparo2024.github.io/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/VincentHancoder/REPARO" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
+              </nav>
+            </div>
+          </article>
+          <article class="publication-item" id="publication-4d-langsplat" data-publication-year="2025" data-domains="spatial-intelligence multimodal-intelligence world-models">
+            <a class="publication-visual" href="https://4d-langsplat.github.io/" target="_blank" rel="noopener noreferrer" aria-label="View 4D LangSplat project">
+              <img src="assets/images/publications/4d-langsplat.webp" alt="4D LangSplat language features tracking semantic changes in dynamic scenes" width="960" height="561" loading="lazy" decoding="async" />
+            </a>
+            <div class="publication-copy">
+              <div class="publication-meta">
+                <span class="publication-venue">CVPR · 2025</span>
+              </div>
+              <h2><a href="https://openaccess.thecvf.com/content/CVPR2025/html/Li_4D_LangSplat_4D_Language_Gaussian_Splatting_via_Multimodal_Large_Language_CVPR_2025_paper.html" target="_blank" rel="noopener noreferrer">4D LangSplat: 4D Language Gaussian Splatting via Multimodal Large Language Models</a></h2>
+              <p class="publication-authors">Wanhua Li, Renping Zhou, Jiawei Zhou, Yingwei Song, Johannes Herter, Minghan Qin, Gao Huang, Hanspeter Pfister</p>
+              <p class="publication-summary">Language-aware 4D scene representations learned from object-wise video captions support time-sensitive, open-vocabulary queries in dynamic scenes.</p>
+              <ul class="publication-labels" aria-label="Research topics">
+                <li class="publication-label">Spatial Intelligence</li>
+                <li class="publication-label">Multimodal Intelligence</li>
+                <li class="publication-label">World Models · Foundations</li>
+              </ul>
+              <nav class="publication-links" aria-label="Resources for 4D LangSplat: 4D Language Gaussian Splatting via Multimodal Large Language Models">
+                <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Li_4D_LangSplat_4D_Language_Gaussian_Splatting_via_Multimodal_Large_Language_CVPR_2025_paper.html" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
+                <a href="https://4d-langsplat.github.io/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/zrporz/4DLangSplat" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
+              </nav>
+            </div>
+          </article>
+          <article class="publication-item" id="publication-social-gpt" data-publication-year="2024" data-domains="multimodal-intelligence">
+            <a class="publication-visual" href="https://mengzibin.github.io/SocialGPT.github.io/" target="_blank" rel="noopener noreferrer" aria-label="View SocialGPT project">
+              <img src="assets/images/publications/social-gpt.webp" alt="SocialGPT framework for visual perception and social relation reasoning" width="960" height="212" loading="lazy" decoding="async" />
+            </a>
+            <div class="publication-copy">
+              <div class="publication-meta">
+                <span class="publication-venue">NeurIPS · 2024</span>
+              </div>
+              <h2><a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/047682108c3b053c61ad2da5a6057b4e-Abstract-Conference.html" target="_blank" rel="noopener noreferrer">SocialGPT: Prompting LLMs for Social Relation Reasoning via Greedy Segment Optimization</a></h2>
+              <p class="publication-authors">Wanhua Li, Zibin Meng, Jiawei Zhou, Donglai Wei, Chuang Gan, Hanspeter Pfister</p>
+              <p class="publication-summary">Vision foundation models and language models work together with automated prompt optimization to reason about social relationships in images.</p>
+              <ul class="publication-labels" aria-label="Research topics">
+                <li class="publication-label">Multimodal Intelligence</li>
+              </ul>
+              <nav class="publication-links" aria-label="Resources for SocialGPT: Prompting LLMs for Social Relation Reasoning via Greedy Segment Optimization">
+                <a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/047682108c3b053c61ad2da5a6057b4e-Abstract-Conference.html" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
+                <a href="https://mengzibin.github.io/SocialGPT.github.io/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/Mengzibin/SocialGPT" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
+              </nav>
+            </div>
+          </article>
+          <article class="publication-item" id="publication-langsplat" data-publication-year="2024" data-domains="spatial-intelligence multimodal-intelligence">
+            <a class="publication-visual" href="https://langsplat.github.io/" target="_blank" rel="noopener noreferrer" aria-label="View LangSplat project">
+              <img src="assets/images/publications/langsplat.webp" alt="Language-guided object localization in 3D scenes with LangSplat" width="718" height="640" loading="lazy" decoding="async" />
+            </a>
+            <div class="publication-copy">
               <div class="publication-meta">
                 <span class="publication-venue">CVPR · 2024</span>
                 <span class="publication-distinction">Highlight</span>
               </div>
-              <div class="publication-copy">
-                <h3><a href="https://openaccess.thecvf.com/content/CVPR2024/html/Qin_LangSplat_3D_Language_Gaussian_Splatting_CVPR_2024_paper.html" target="_blank" rel="noopener noreferrer">LangSplat: 3D Language Gaussian Splatting</a></h3>
-                <p class="publication-authors">Minghan Qin, Wanhua Li, Jiawei Zhou, Haoqian Wang, Hanspeter Pfister</p>
-                <p class="publication-summary">A 3D language field built with Gaussian splatting enables efficient open-vocabulary object localization and semantic segmentation.</p>
-                <nav class="publication-links" aria-label="Resources for LangSplat: 3D Language Gaussian Splatting">
-                  <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Qin_LangSplat_3D_Language_Gaussian_Splatting_CVPR_2024_paper.html" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
-                  <a href="https://langsplat.github.io/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
-                  <a href="https://github.com/minghanqin/LangSplat" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
-                </nav>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="publication-domain" id="multimodal-intelligence" aria-labelledby="multimodal-intelligence-title">
-          <header class="publication-domain-heading" data-reveal>
-            <h2 id="multimodal-intelligence-title">Multimodal Intelligence</h2>
-            <p>Connecting visual evidence, language, and reasoning across modalities.</p>
-          </header>
-          <div class="publication-list">
-            <article class="publication-item" data-reveal>
-              <div class="publication-meta">
-                <span class="publication-venue">NeurIPS · 2026</span>
-              </div>
-              <div class="publication-copy">
-                <h3><a href="https://arxiv.org/abs/2605.08354" target="_blank" rel="noopener noreferrer">Auto-Rubric as Reward: From Implicit Preferences to Explicit Multimodal Generative Criteria</a></h3>
-                <p class="publication-authors">Juanxi Tian, Fengyuan Liu, Jiaming Han, Yilei Jiang, Yongliang Wu, Yesheng Liu, Haodong Li, Furong Xu, Wanhua Li</p>
-                <p class="publication-summary">Multimodal preferences are converted into explicit, verifiable rubrics, then used with Rubric Policy Optimization to align text-to-image generation and image editing with human judgments.</p>
-                <nav class="publication-links" aria-label="Resources for Auto-Rubric as Reward: From Implicit Preferences to Explicit Multimodal Generative Criteria">
-                  <a href="https://arxiv.org/abs/2605.08354" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
-                  <a href="https://openenvision.github.io/AutoRubric-as-Reward/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
-                  <a href="https://github.com/OpenEnvision/AutoRubric-as-Reward" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
-                </nav>
-              </div>
-            </article>
-            <article class="publication-item" data-reveal>
-              <div class="publication-meta">
-                <span class="publication-venue">NeurIPS · 2024</span>
-              </div>
-              <div class="publication-copy">
-                <h3><a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/047682108c3b053c61ad2da5a6057b4e-Abstract-Conference.html" target="_blank" rel="noopener noreferrer">SocialGPT: Prompting LLMs for Social Relation Reasoning via Greedy Segment Optimization</a></h3>
-                <p class="publication-authors">Wanhua Li, Zibin Meng, Jiawei Zhou, Donglai Wei, Chuang Gan, Hanspeter Pfister</p>
-                <p class="publication-summary">Vision foundation models and language models work together with automated prompt optimization to reason about social relationships in images.</p>
-                <nav class="publication-links" aria-label="Resources for SocialGPT: Prompting LLMs for Social Relation Reasoning via Greedy Segment Optimization">
-                  <a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/047682108c3b053c61ad2da5a6057b4e-Abstract-Conference.html" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
-                  <a href="https://mengzibin.github.io/SocialGPT.github.io/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
-                  <a href="https://github.com/Mengzibin/SocialGPT" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
-                </nav>
-              </div>
-            </article>
-            <article class="publication-item" data-reveal>
+              <h2><a href="https://openaccess.thecvf.com/content/CVPR2024/html/Qin_LangSplat_3D_Language_Gaussian_Splatting_CVPR_2024_paper.html" target="_blank" rel="noopener noreferrer">LangSplat: 3D Language Gaussian Splatting</a></h2>
+              <p class="publication-authors">Minghan Qin, Wanhua Li, Jiawei Zhou, Haoqian Wang, Hanspeter Pfister</p>
+              <p class="publication-summary">A 3D language field built with Gaussian splatting enables efficient open-vocabulary object localization and semantic segmentation.</p>
+              <ul class="publication-labels" aria-label="Research topics">
+                <li class="publication-label">Spatial Intelligence</li>
+                <li class="publication-label">Multimodal Intelligence</li>
+              </ul>
+              <nav class="publication-links" aria-label="Resources for LangSplat: 3D Language Gaussian Splatting">
+                <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Qin_LangSplat_3D_Language_Gaussian_Splatting_CVPR_2024_paper.html" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
+                <a href="https://langsplat.github.io/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/minghanqin/LangSplat" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
+              </nav>
+            </div>
+          </article>
+          <article class="publication-item" id="publication-clip-trans" data-publication-year="2023" data-domains="multimodal-intelligence">
+            <a class="publication-visual" href="https://devaansh100.github.io/projects/cliptrans/" target="_blank" rel="noopener noreferrer" aria-label="View CLIPTrans project">
+              <img src="assets/images/publications/clip-trans.webp" alt="CLIPTrans visual knowledge transfer for multimodal machine translation" width="848" height="470" loading="lazy" decoding="async" />
+            </a>
+            <div class="publication-copy">
               <div class="publication-meta">
                 <span class="publication-venue">ICCV · 2023</span>
               </div>
-              <div class="publication-copy">
-                <h3><a href="https://openaccess.thecvf.com/content/ICCV2023/html/Gupta_CLIPTrans_Transferring_Visual_Knowledge_with_Pre-trained_Models_for_Multimodal_Machine_ICCV_2023_paper.html" target="_blank" rel="noopener noreferrer">CLIPTrans: Transferring Visual Knowledge with Pre-trained Models for Multimodal Machine Translation</a></h3>
-                <p class="publication-authors">Devaansh Gupta, Siddhant Kharbanda, Jiawei Zhou, Wanhua Li, Hanspeter Pfister, Donglai Wei</p>
-                <p class="publication-summary">Pretrained vision-language and multilingual translation models are aligned to transfer visual knowledge into multimodal machine translation.</p>
-                <nav class="publication-links" aria-label="Resources for CLIPTrans: Transferring Visual Knowledge with Pre-trained Models for Multimodal Machine Translation">
-                  <a href="https://openaccess.thecvf.com/content/ICCV2023/html/Gupta_CLIPTrans_Transferring_Visual_Knowledge_with_Pre-trained_Models_for_Multimodal_Machine_ICCV_2023_paper.html" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
-                  <a href="https://devaansh100.github.io/projects/cliptrans/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
-                  <a href="https://github.com/devaansh100/CLIPTrans" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
-                </nav>
-              </div>
-            </article>
-            <article class="publication-item" data-reveal>
+              <h2><a href="https://openaccess.thecvf.com/content/ICCV2023/html/Gupta_CLIPTrans_Transferring_Visual_Knowledge_with_Pre-trained_Models_for_Multimodal_Machine_ICCV_2023_paper.html" target="_blank" rel="noopener noreferrer">CLIPTrans: Transferring Visual Knowledge with Pre-trained Models for Multimodal Machine Translation</a></h2>
+              <p class="publication-authors">Devaansh Gupta, Siddhant Kharbanda, Jiawei Zhou, Wanhua Li, Hanspeter Pfister, Donglai Wei</p>
+              <p class="publication-summary">Pretrained vision-language and multilingual translation models are aligned to transfer visual knowledge into multimodal machine translation.</p>
+              <ul class="publication-labels" aria-label="Research topics">
+                <li class="publication-label">Multimodal Intelligence</li>
+              </ul>
+              <nav class="publication-links" aria-label="Resources for CLIPTrans: Transferring Visual Knowledge with Pre-trained Models for Multimodal Machine Translation">
+                <a href="https://openaccess.thecvf.com/content/ICCV2023/html/Gupta_CLIPTrans_Transferring_Visual_Knowledge_with_Pre-trained_Models_for_Multimodal_Machine_ICCV_2023_paper.html" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
+                <a href="https://devaansh100.github.io/projects/cliptrans/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/devaansh100/CLIPTrans" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
+              </nav>
+            </div>
+          </article>
+          <article class="publication-item" id="publication-ordinal-clip" data-publication-year="2022" data-domains="multimodal-intelligence">
+            <a class="publication-visual" href="https://xk-huang.github.io/OrdinalCLIP/" target="_blank" rel="noopener noreferrer" aria-label="View OrdinalCLIP project">
+              <img src="assets/images/publications/ordinal-clip.webp" alt="OrdinalCLIP language-guided ordinal regression overview" width="960" height="151" loading="lazy" decoding="async" />
+            </a>
+            <div class="publication-copy">
               <div class="publication-meta">
                 <span class="publication-venue">NeurIPS · 2022</span>
               </div>
-              <div class="publication-copy">
-                <h3><a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/e55b33430e344a1ee23710415b1c9d87-Abstract.html" target="_blank" rel="noopener noreferrer">OrdinalCLIP: Learning Rank Prompts for Language-Guided Ordinal Regression</a></h3>
-                <p class="publication-authors">Wanhua Li, Xiaoke Huang, Zheng Zhu, Yansong Tang, Xiu Li, Jie Zhou, Jiwen Lu</p>
-                <p class="publication-summary">Ordered language prompts connect visual features with rank concepts in CLIP for language-guided ordinal regression.</p>
-                <nav class="publication-links" aria-label="Resources for OrdinalCLIP: Learning Rank Prompts for Language-Guided Ordinal Regression">
-                  <a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/e55b33430e344a1ee23710415b1c9d87-Abstract.html" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
-                  <a href="https://xk-huang.github.io/OrdinalCLIP/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
-                  <a href="https://github.com/xk-huang/OrdinalCLIP" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
-                </nav>
-              </div>
-            </article>
-          </div>
-        </section>
+              <h2><a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/e55b33430e344a1ee23710415b1c9d87-Abstract.html" target="_blank" rel="noopener noreferrer">OrdinalCLIP: Learning Rank Prompts for Language-Guided Ordinal Regression</a></h2>
+              <p class="publication-authors">Wanhua Li, Xiaoke Huang, Zheng Zhu, Yansong Tang, Xiu Li, Jie Zhou, Jiwen Lu</p>
+              <p class="publication-summary">Ordered language prompts connect visual features with rank concepts in CLIP for language-guided ordinal regression.</p>
+              <ul class="publication-labels" aria-label="Research topics">
+                <li class="publication-label">Multimodal Intelligence</li>
+              </ul>
+              <nav class="publication-links" aria-label="Resources for OrdinalCLIP: Learning Rank Prompts for Language-Guided Ordinal Regression">
+                <a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/e55b33430e344a1ee23710415b1c9d87-Abstract.html" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
+                <a href="https://xk-huang.github.io/OrdinalCLIP/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/xk-huang/OrdinalCLIP" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
+              </nav>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
 
