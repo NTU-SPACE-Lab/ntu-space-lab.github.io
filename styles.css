@@ -1983,17 +1983,44 @@ body.person-bio-open {
   line-height: 1.65;
 }
 
-.publications-placeholder {
+.publications-scholar {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.publication-domain-nav {
   display: grid;
-  grid-template-columns: minmax(180px, 0.32fr) minmax(340px, 1fr);
-  gap: clamp(36px, 7vw, 110px);
-  margin-top: clamp(72px, 9vw, 138px);
-  padding: clamp(28px, 3vw, 46px) 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(44px, 5vw, 72px);
+  margin-bottom: clamp(64px, 7vw, 108px);
   border-top: 1px solid var(--navy);
   border-bottom: 1px solid var(--line);
 }
 
-.publications-placeholder span {
+.publication-domain-nav > a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 18px;
+  gap: 12px 16px;
+  min-width: 0;
+  padding: 22px 24px;
+  border-right: 1px solid var(--line);
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.publication-domain-nav > a:first-child {
+  padding-left: 0;
+}
+
+.publication-domain-nav > a:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+.publication-domain-number,
+.publication-domain-heading .item-number {
   color: var(--blue);
   font-family: "DM Mono", monospace;
   font-size: 11px;
@@ -2002,11 +2029,152 @@ body.person-bio-open {
   text-transform: uppercase;
 }
 
-.publications-placeholder p {
-  color: var(--ink);
-  font-size: clamp(22px, 2.2vw, 34px);
-  line-height: 1.2;
+.publication-domain-number {
+  grid-column: 1 / -1;
+}
+
+.publication-domain-nav strong {
+  max-width: 18ch;
+  font-size: clamp(15px, 1.3vw, 19px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.publication-domain-nav svg {
+  align-self: end;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.publication-domain-nav > a:hover {
+  background: var(--silver-blue);
+  color: var(--blue);
+}
+
+.publication-domain {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.32fr) minmax(0, 1fr);
+  gap: clamp(36px, 5vw, 80px);
+  padding-top: 32px;
+  border-top: 1px solid var(--navy);
+  scroll-margin-top: calc(var(--header-height) + 28px);
+}
+
+.publication-domain + .publication-domain {
+  margin-top: clamp(64px, 7vw, 108px);
+}
+
+.publication-domain-heading h2 {
+  max-width: 14ch;
+  margin-top: 18px;
+  font-size: clamp(30px, 2.7vw, 42px);
+  line-height: 1.12;
   letter-spacing: -0.045em;
+}
+
+.publication-domain-heading p {
+  max-width: 34ch;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.publication-domain-heading .publication-domain-note {
+  margin-top: 14px;
+  font-size: 12px;
+}
+
+.publication-list,
+.publication-copy {
+  min-width: 0;
+}
+
+.publication-item {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 24px;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.publication-item:first-child {
+  padding-top: 0;
+}
+
+.publication-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  padding-top: 5px;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.publication-venue {
+  color: var(--blue);
+}
+
+.publication-distinction {
+  color: var(--red);
+  font-size: 10px;
+}
+
+.publication-copy h3 {
+  font-size: clamp(21px, 1.7vw, 27px);
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+
+.publication-authors {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.publication-summary {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  margin-top: 16px;
+}
+
+.publication-links a {
+  padding: 5px 0;
+  color: var(--blue);
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.publication-copy h3 a:hover,
+.publication-links a:hover,
+.publications-scholar:hover {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.publication-domain-nav > a:focus-visible,
+.publication-copy a:focus-visible,
+.publications-scholar:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
 }
 
 .news > .section-index {
@@ -3445,8 +3613,34 @@ body.person-bio-open {
     gap: 22px;
   }
 
-  .publications-placeholder {
-    grid-template-columns: minmax(150px, 0.3fr) minmax(0, 1fr);
+  .publication-domain-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .publication-domain-nav > a:nth-child(odd) {
+    padding-left: 0;
+  }
+
+  .publication-domain-nav > a:nth-child(even) {
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  .publication-domain-nav > a:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .publication-domain {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .publication-domain-heading h2 {
+    max-width: 24ch;
+  }
+
+  .publication-domain-heading p {
+    max-width: 62ch;
   }
 
   .news-story {
@@ -3894,10 +4088,54 @@ body.person-bio-open {
     font-size: 14px;
   }
 
-  .publications-placeholder {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-top: 64px;
+  .publication-domain-nav {
+    margin-top: 36px;
+    margin-bottom: 56px;
+  }
+
+  .publication-domain-nav > a {
+    gap: 10px;
+    padding: 18px 16px;
+  }
+
+  .publication-domain-nav strong {
+    font-size: 14px;
+  }
+
+  .publication-domain {
+    gap: 28px;
+    padding-top: 26px;
+  }
+
+  .publication-domain-heading h2 {
+    max-width: 14ch;
+    margin-top: 14px;
+    font-size: 34px;
+  }
+
+  .publication-domain-heading p {
+    margin-top: 16px;
+  }
+
+  .publication-item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 26px 0;
+  }
+
+  .publication-meta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    padding-top: 0;
+  }
+
+  .publication-copy h3 {
+    font-size: 22px;
+  }
+
+  .publication-authors {
+    font-size: 12px;
   }
 
   .news > .section-index {

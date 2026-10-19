@@ -600,7 +600,15 @@
               </article>
               <article class="person" data-reveal>
                 <div class="person-portrait-wrap">
-                  <div class="person-portrait person-portrait-photo">
+                  <button
+                    class="person-portrait person-portrait-photo person-portrait-button"
+                    type="button"
+                    aria-label="Read Taheri Ghahrizjani Ali's biography"
+                    aria-haspopup="dialog"
+                    aria-controls="ali-taheri-bio"
+                    title="View Taheri Ghahrizjani Ali's biography"
+                    data-person-bio-open="ali-taheri-bio"
+                  >
                     <img
                     src="assets/images/people/taheri-ghahrizjani-ali.jpg"
                     alt="Portrait of Taheri Ghahrizjani Ali"
@@ -608,7 +616,7 @@
                     height="1400"
                     decoding="async"
                     />
-                  </div>
+                  </button>
                   <div class="person-profile-actions" role="group" aria-label="Taheri Ghahrizjani Ali profiles">
                     <a
                       class="person-profile-choice"
@@ -678,6 +686,33 @@
             <a href="mailto:shizhe.zhang@ntu.edu.sg" aria-label="Email Shizhe Zhang at shizhe.zhang@ntu.edu.sg">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" /></svg>
               <span>shizhe.zhang@ntu.edu.sg</span>
+            </a>
+          </footer>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="person-bio-dialog" id="ali-taheri-bio" aria-labelledby="ali-bio-name">
+      <button class="person-bio-close" type="button" aria-label="Close biography" data-person-bio-close autofocus>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg>
+      </button>
+      <div class="person-bio-layout">
+        <div class="person-bio-photo">
+          <img src="assets/images/people/taheri-ghahrizjani-ali.jpg" alt="Portrait of Taheri Ghahrizjani Ali" width="1089" height="1400" decoding="async" />
+        </div>
+        <div class="person-bio-content">
+          <header class="person-bio-heading">
+            <p class="person-bio-role">Research Assistant · NTU SPACE Lab</p>
+            <h2 id="ali-bio-name">Taheri Ghahrizjani Ali</h2>
+          </header>
+          <div class="person-bio-text">
+            <p>Ali Taheri is a Research Assistant in the School of Electrical and Electronic Engineering at Nanyang Technological University (NTU), working with Prof. Wanhua Li. His research focuses on trustworthy machine learning and AI safety, with broader interests in formal methods and verification. He received his B.Sc. in Computer Engineering from Isfahan University of Technology (IUT), Iran.</p>
+            <p>Before joining NTU, he conducted research at the Max Planck Institute for Software Systems, Hong Kong Baptist University, and Simon Fraser University, working on safety verification of dynamical systems, robust LLM fine-tuning, and autonomous driving.</p>
+          </div>
+          <footer class="person-bio-contact">
+            <a href="mailto:ali.tg@ntu.edu.sg" aria-label="Email Taheri Ghahrizjani Ali at ali.tg@ntu.edu.sg">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" /></svg>
+              <span>ali.tg@ntu.edu.sg</span>
             </a>
           </footer>
         </div>
