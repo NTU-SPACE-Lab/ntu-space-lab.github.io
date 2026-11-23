@@ -1,7 +1,7 @@
 # People image sources
 
 - `wanhua-li.jpg` — public profile photograph from [Wanhua Li's personal homepage](https://li-wanhua.github.io/), original file: `images/wanhua_suit_clean.JPG` (accessed 2026-08-22).
-- `juanxi-tian.png` — portrait supplied directly by the user for the SPACE Lab People page.
+- `juanxi-tian.jpg` — portrait from [Juanxi Tian's personal homepage](https://tianshijing.github.io/), original file: `assets/img/images/avatar-portrait.png` (accessed 2026-11-23); cropped square, resized, and compressed for the circular profile treatment.
 - `jirui-yang.png` — portrait supplied directly by the user for the SPACE Lab People page.
 - `li-jun-zhao.jpg` — portrait supplied directly by the user for the SPACE Lab People page; cropped and resized for the circular profile treatment.
 - `xumeng-han.jpg` — portrait supplied directly by the user for the SPACE Lab People page; cropped for the circular profile treatment.

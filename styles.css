@@ -1292,6 +1292,15 @@ body[data-page="research"] .subpage-main {
   min-width: 0;
 }
 
+@media (min-width: 981px) {
+  #embodied-intelligence .research-area-copy,
+  #world-models .research-area-copy,
+  #spatial-intelligence .research-area-copy,
+  #multimodal-intelligence .research-area-copy {
+    grid-row: 2 / 3;
+  }
+}
+
 .research-area-overview p {
   color: var(--ink);
   font-size: 15px;

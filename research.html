@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Research at SPACE Lab spans embodied intelligence, world models, spatial and physical intelligence, and multimodal intelligence."
+      content="Research at SPACE Lab spans embodied intelligence, world models, spatial intelligence, and multimodal intelligence."
     />
     <meta name="theme-color" content="#ffffff" />
     <link rel="canonical" href="https://ntu-space-lab.github.io/research.html" />
@@ -128,9 +128,10 @@
             </h1>
             <div class="research-heading-aside" data-reveal>
               <p>
-                Our research connects perception, predictive modeling, and decision-making
-                to study how intelligent systems can understand and interact with the
-                physical world. Four complementary directions define this agenda.
+                Our research integrates perception, predictive modeling, and decision-making
+                to investigate how intelligent systems acquire grounded representations of
+                the physical world and use them to act. Four complementary directions
+                structure this agenda.
               </p>
             </div>
           </div>
@@ -139,7 +140,7 @@
               <span class="research-nav-number">01</span>
               <span class="research-nav-copy">
                 <strong>Embodied Intelligence</strong>
-                <small>Learning to perceive, plan, and act through interaction.</small>
+                <small>How perception, representation, and action are coupled through interaction.</small>
               </span>
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h13M13 7l5 5-5 5" />
@@ -149,7 +150,7 @@
               <span class="research-nav-number">02</span>
               <span class="research-nav-copy">
                 <strong>World Models</strong>
-                <small>Predicting environmental dynamics and the consequences of actions.</small>
+                <small>Modeling environment dynamics and the consequences of actions.</small>
               </span>
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h13M13 7l5 5-5 5" />
@@ -158,8 +159,8 @@
             <a href="#spatial-intelligence">
               <span class="research-nav-number">03</span>
               <span class="research-nav-copy">
-                <strong>Spatial &amp; Physical Intelligence</strong>
-                <small>Reconstructing geometry and reasoning about physical interactions.</small>
+                <strong>Spatial Intelligence</strong>
+                <small>Reconstructing geometry and modeling physical interaction.</small>
               </span>
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h13M13 7l5 5-5 5" />
@@ -169,7 +170,7 @@
               <span class="research-nav-number">04</span>
               <span class="research-nav-copy">
                 <strong>Multimodal Intelligence</strong>
-                <small>Grounded understanding and reasoning across modalities.</small>
+                <small>Evidence-grounded understanding and reasoning across modalities.</small>
               </span>
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h13M13 7l5 5-5 5" />
@@ -182,7 +183,7 @@
           <article class="research-item" id="embodied-intelligence" aria-labelledby="embodied-title">
             <header class="research-area-heading" data-reveal>
               <h2 id="embodied-title">Embodied Intelligence</h2>
-              <p class="research-area-thesis">Connecting perception, language, and action to develop agents that learn through interaction and adapt to unfamiliar environments.</p>
+              <p class="research-area-thesis">Studying how perception, representation, and action are coupled in agents that acquire goal-directed behavior through interaction and adapt to changing environments.</p>
             </header>
             <figure data-reveal>
               <img
@@ -195,30 +196,15 @@
             </figure>
             <div class="research-area-copy" data-reveal>
               <div class="research-area-overview">
-                <p>Embodied intelligence concerns how an agent uses perception and interaction to accomplish goals in its environment. Our research investigates how visual observations and human instructions can be translated into purposeful behavior, including navigation and manipulation. This requires representations that connect objects, spatial relationships, and task goals with the actions available to a particular body. Policies must integrate perception, memory, and feedback as observations change or execution diverges from the intended outcome.</p>
-                <p>A central challenge is generalization across tasks, environments, and embodiments under limited supervision. Our agenda examines learning from demonstrations, multimodal pretraining, and reinforcement learning as complementary routes to transferable skills. We study the relationship between task planning and motor control under partial observability and uncertainty, emphasizing evaluation through task completion, adaptation to unfamiliar conditions, and recovery from execution errors.</p>
+                <p>Embodied intelligence studies how intelligent behavior emerges from the coupling of an agent's physical embodiment, perception, and control. Unlike systems evaluated on static data, embodied agents operate in noisy and changing environments, where decisions must be made under partial observability and actions alter the conditions for subsequent perception and control. Our research develops representations and learning methods that connect multimodal observations to goal-directed action, enabling agents to build grounded understanding of their surroundings, reason under uncertainty, and adapt through interaction. A central aim is generalization across tasks, objects, and embodiments, with an emphasis on reliable behavior when sensing, dynamics, or task conditions differ from those encountered during training.</p>
               </div>
-              <dl class="research-focus" aria-label="Embodied intelligence research focus">
-                <div>
-                  <dt>Grounded action learning</dt>
-                  <dd>Connect visual and linguistic representations with executable actions, studying how semantic knowledge and demonstrations support skill acquisition across objects, instructions, and settings.</dd>
-                </div>
-                <div>
-                  <dt>Planning with feedback</dt>
-                  <dd>Link task decomposition with continuous observation and control, enabling agents to revise plans and recover when execution encounters unexpected conditions.</dd>
-                </div>
-                <div>
-                  <dt>Transfer across embodiments</dt>
-                  <dd>Study reusable representations and adaptation across bodies and action spaces, examining how skills transfer when sensing, geometry, or dynamics change.</dd>
-                </div>
-              </dl>
             </div>
           </article>
 
           <article class="research-item" id="world-models" aria-labelledby="world-models-title">
             <header class="research-area-heading" data-reveal>
               <h2 id="world-models-title">World Models</h2>
-              <p class="research-area-thesis">Learning predictive representations of changing environments to anticipate the consequences of actions and support decisions over extended time horizons.</p>
+              <p class="research-area-thesis">Learning predictive representations of environment dynamics to anticipate action consequences and inform decisions over extended horizons.</p>
             </header>
             <figure data-reveal>
               <img
@@ -232,30 +218,15 @@
             </figure>
             <div class="research-area-copy" data-reveal>
               <div class="research-area-overview">
-                <p>World models provide a computational framework for representing how an environment evolves and how actions influence its future. Our research investigates latent dynamics and generative video models that integrate observations over time, infer hidden state, and predict possible continuations conditioned on actions or goals. A key question is how to preserve information relevant to interaction, including object persistence, motion, and the relationship between an agent and its surroundings, despite incomplete observations.</p>
-                <p>We study how learned simulation can support planning and policy learning through imagined trajectories. This requires careful treatment of uncertainty, accumulated prediction error, and changes beyond the training distribution. Our agenda evaluates temporal consistency, responsiveness to actions, and the accuracy of task-relevant predictions alongside visual quality. The broader objective is to establish when predictive models provide reliable guidance for decisions in unfamiliar situations.</p>
+                <p>World models learn how environments evolve and how an agent's actions shape future states. Our research develops predictive representations that integrate observations over time, infer unobserved state, and forecast the task-relevant consequences of interventions. Such models serve as internal simulators in which plans can be assessed before execution, reducing reliance on costly physical trial and error. We study how to preserve geometric, physical, and temporal structure over long horizons, and how calibrated uncertainty signals when a prediction can be trusted. The aim is learned simulation that remains reliable for planning, policy improvement, and evaluation under partial observability and distribution shift.</p>
               </div>
-              <dl class="research-focus" aria-label="World models research focus">
-                <div>
-                  <dt>Action-conditioned prediction</dt>
-                  <dd>Model how candidate actions affect future observations and latent states, preserving temporal dependencies and distinguishing controllable changes from independent environmental variation.</dd>
-                </div>
-                <div>
-                  <dt>Learning through imagination</dt>
-                  <dd>Investigate how predicted trajectories support planning, exploration, and policy improvement, while limiting the influence of model errors on subsequent decisions.</dd>
-                </div>
-                <div>
-                  <dt>Uncertainty and evaluation</dt>
-                  <dd>Assess calibration, consistency over extended rollouts, and sensitivity to actions, measuring whether predictions support reliable decisions under partial observability and distribution shifts.</dd>
-                </div>
-              </dl>
             </div>
           </article>
 
           <article class="research-item" id="spatial-intelligence" aria-labelledby="spatial-title">
             <header class="research-area-heading" data-reveal>
-              <h2 id="spatial-title">Spatial &amp; Physical Intelligence</h2>
-              <p class="research-area-thesis">Learning representations of geometry, appearance, and physical structure that connect visual observations with the dynamics of three-dimensional environments.</p>
+              <h2 id="spatial-title">Spatial Intelligence</h2>
+              <p class="research-area-thesis">Learning representations of geometry, appearance, and physical structure that link visual observations to the structure and dynamics of three-dimensional scenes.</p>
             </header>
             <figure data-reveal>
               <img
@@ -269,30 +240,15 @@
             </figure>
             <div class="research-area-copy" data-reveal>
               <div class="research-area-overview">
-                <p>We investigate how images and videos can be transformed into structured representations of three-dimensional scenes and their evolution over time. Our interests include 3D and 4D reconstruction, neural rendering, and generative scene modeling. We study neural fields and explicit representations, including 3D Gaussians, with emphasis on geometric consistency, persistent object identity, and the relationship between appearance and underlying scene structure. These representations should support visual synthesis and queries about spatial relationships.</p>
-                <p>Physical understanding further requires models of properties and interactions that appearance alone does not determine. We examine how scene representations can incorporate material behavior, contact, and motion by combining learned models with geometric and physical priors. A central question is how uncertainty in reconstructed geometry or inferred physical parameters affects predictions and downstream decisions under incomplete observations.</p>
+                <p>Spatial intelligence concerns how models acquire structured representations of the three-dimensional world and its evolution over time. Our research learns from images and video to reconstruct geometry, appearance, and object identity across viewpoints and dynamic scenes, using both implicit neural fields and explicit representations such as 3D Gaussian splatting. We study how these representations support view synthesis, spatial reasoning, and reliable queries about scene structure, and how they can be extended with physical properties and interaction dynamics that are not recoverable from appearance alone. A central concern is how uncertainty in reconstructed geometry and inferred physical parameters affects downstream prediction and decision-making under partial observations.</p>
               </div>
-              <dl class="research-focus" aria-label="Spatial and physical intelligence research focus">
-                <div>
-                  <dt>Geometry across space and time</dt>
-                  <dd>Recover coherent geometry, motion, and object correspondences from images and videos while addressing occlusion, sparse viewpoints, and incomplete observations of dynamic environments.</dd>
-                </div>
-                <div>
-                  <dt>Neural rendering and generation</dt>
-                  <dd>Study representations for novel-view synthesis and controlled scene generation, with attention to geometric consistency, appearance fidelity, and computational efficiency.</dd>
-                </div>
-                <div>
-                  <dt>Physical structure and interaction</dt>
-                  <dd>Investigate representations of materials, contact, and motion that connect visual evidence with physical constraints and support predictions under changing interaction conditions.</dd>
-                </div>
-              </dl>
             </div>
           </article>
 
           <article class="research-item" id="multimodal-intelligence" aria-labelledby="multimodal-title">
             <header class="research-area-heading" data-reveal>
               <h2 id="multimodal-title">Multimodal Intelligence</h2>
-              <p class="research-area-thesis">Grounding perception, language, and temporal reasoning in shared evidence to support reliable understanding and purposeful use of external tools.</p>
+              <p class="research-area-thesis">Grounding perception, language, and temporal reasoning in shared evidence for reliable understanding and tool use.</p>
             </header>
             <figure data-reveal>
               <img
@@ -306,23 +262,8 @@
             </figure>
             <div class="research-area-copy" data-reveal>
               <div class="research-area-overview">
-                <p>Multimodal intelligence concerns how complementary sources of information can support a coherent understanding of the world. Our agenda connects vision, language, audio, and spatial representations, with particular emphasis on visual instruction following and reasoning over images and extended video sequences. Central questions include how to preserve fine visual detail, align events across modalities, resolve ambiguous references, and maintain consistent interpretations as observations accumulate.</p>
-                <p>We further investigate multimodal agents that select external tools, gather additional observations, and revise their responses in light of new information. Linking perception, memory, and task decomposition supports the study of reasoning across multiple steps and modalities. We emphasize compositional generalization, calibrated uncertainty, and mechanisms for detecting and correcting errors, evaluating whether conclusions are supported by observable evidence rather than plausible language alone.</p>
+                <p>Multimodal intelligence studies how models integrate complementary signals, including vision, language, audio, and spatial representations, into a coherent and evidence-grounded account of the world. Our research develops shared representations that preserve fine-grained visual detail, align events across modalities, and resolve ambiguous references in images and long-form video. We examine how these representations support instruction following, temporal reasoning, and multi-step inference, including settings where agents must seek additional observations or use external tools. A central concern is whether conclusions remain traceable to observable evidence and robust as information accumulates, with calibrated uncertainty and mechanisms for detecting and correcting errors.</p>
               </div>
-              <dl class="research-focus" aria-label="Multimodal intelligence research focus">
-                <div>
-                  <dt>Grounding across modalities</dt>
-                  <dd>Connect language with objects, attributes, events, and spatial relationships, studying cross-modal alignment and responses whose claims can be traced to evidence.</dd>
-                </div>
-                <div>
-                  <dt>Temporal reasoning and memory</dt>
-                  <dd>Model event order, object continuity, and dependencies across extended video sequences, using memory to integrate observations and answer questions requiring temporal context.</dd>
-                </div>
-                <div>
-                  <dt>Agentic multimodal reasoning</dt>
-                  <dd>Study how agents decompose multimodal tasks, select perceptual or computational tools, evaluate returned evidence, and recover from errors through iterative interaction.</dd>
-                </div>
-              </dl>
             </div>
           </article>
         </div>
